@@ -19,7 +19,7 @@ operational reference profile inside a host repository.
 ## Optional profile records
 
 Adopt `WORKFLOW.md`, `ROLES/`, `ARCHITECTURE/MODULE-COMPOSITION.md`, and the
-three files in `contracts/` when the host project needs a reconstructable
+strict schemas in `schemas/` when the host project needs a reconstructable
 operational reference. Keep them as project documentation; do not imply that
 they install a validator, runtime, or execution permission.
 

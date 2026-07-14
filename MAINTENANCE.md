@@ -9,8 +9,8 @@ support, execution runtime, or a service-level commitment.
 - A change to the public package must keep `tests/verify_public_package.py`
   passing and update `PUBLIC-MANIFEST.json` through the package build process.
 - Pull requests and changes to `main` run the public integrity workflow.
-- The operational-profile test suite runs with
-  `python -m unittest tests.test_operational_validation` and uses only the
+- The Bootstrap-Complete test suite runs with
+  `python -m unittest discover -s tests -p 'test_*.py'` and uses only the
   Python standard library.
 - Each published kit version records user-visible changes in `CHANGELOG.md`.
 - A release steward may create an immutable `vMAJOR.MINOR.PATCH` tag only after

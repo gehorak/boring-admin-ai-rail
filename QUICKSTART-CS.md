@@ -1,19 +1,13 @@
-# Rychlý start pro public operational profil
+# Český rychlý start
 
-Tento profil rozšiřuje malý Adoption Kit o bootstrap, role, moduly, workflow a
-datové kontrakty. Neinstaluje runtime ani nedává AI oprávnění něco vykonat.
+Kompletní česká dokumentace pro veřejný profil v0.2.2 je v adresáři
+[`DOCS/cs/`](./DOCS/cs/README.md). Doporučené pořadí je:
 
-1. Začni podle `QUICKSTART.md` a vytvoř lokální `PROJECT.md`.
-2. Urči lidského decision ownera a vyber jen moduly odpovídající skutečným
-   change surfaces.
-3. Doplň boundaries, codebase voice, integrační body a do-not-touch areas.
-4. Pro každý aktivní change surface zapiš právě jeden vlastnický modul podle
-   `ARCHITECTURE/MODULE-COMPOSITION.md`.
-5. Proveď bootstrap review pomocí `templates/BOOTSTRAP-REVIEW.md`.
-6. Až výsledek `READY` dovolí přejít k omezené delivery práci podle
-   `WORKFLOW.md`.
+1. [Onboarding](./DOCS/cs/ONBOARDING.md);
+2. [FAQ](./DOCS/cs/FAQ.md);
+3. [Slovník](./DOCS/cs/GLOSSARY.md);
+4. [Use cases](./DOCS/cs/USE-CASES.md);
+5. [Traceability](./DOCS/cs/TRACEABILITY.md).
 
-Před `READY` je povolené pouze read-only mapování, doplnění projektu a
-vyjasňování. Role ani JSON Schema nepředstavují tool permission, request gate
-nebo executor. `validators/validate_operational_profile.py` pouze ověřuje
-zadané dokumenty a data; nic nevykonává.
+Profil v0.2.2 je reference-only. `python -m public_rail` kontroluje dokumenty
+a data offline; nevolá model, neuděluje oprávnění a nic nevykonává.

@@ -11,8 +11,8 @@ authorization.
 
 The optional operational profile includes no request gate, output gate, tool
 gate, sandbox, executor, provider adapter, telemetry, or model qualification
-runtime. Its standard-library validator checks supplied documentation and data
-only; it does not authorize or execute work.
+runtime. Its standard-library CLI checks supplied documentation and data only;
+it does not authorize or execute work.
 
 An adopting team must establish its own local rules, implementation controls,
 and evidence appropriate to its environment.

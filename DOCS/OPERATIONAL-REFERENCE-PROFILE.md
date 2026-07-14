@@ -1,6 +1,6 @@
 # Public Operational Reference Profile
 
-Kit-Version: v0.2.1
+Kit-Version: v0.2.2
 Profile: optional operational reference
 
 ## Purpose
@@ -25,9 +25,9 @@ only needs project-local contracts.
 
 This profile includes no request gate, output gate, tool gate, sandbox,
 executor, provider adapter, telemetry, operational logging, or model
-qualification runtime. JSON Schema files in `contracts/` describe data, and
-`validators/validate_operational_profile.py` validates supplied artifacts only;
-neither grants authorization or executes work.
+qualification runtime. JSON Schema files in `schemas/` describe data, and
+`python -m public_rail` validates supplied artifacts only; it neither grants
+authorization nor executes work.
 
 ## Authority
 
@@ -45,6 +45,7 @@ execution environment.
 
 ## Relationship to later work
 
-The included validator checks portable contract invariants. Any future runtime
-may consume these data contracts, but it must not redefine their documented
+The included CLI checks portable contract invariants and derives only
+`UNPACKED`, `SEEDED`, `MAPPED`, `READY`, or `BLOCKED`. Any future runtime may
+consume these data contracts, but it must not redefine their documented
 authority or bootstrap rules.

@@ -1,41 +1,52 @@
 # BORING-ADMIN-AI-RAIL
 
-## Adoption Reference Kit
+## Bootstrap-Complete Public Profile
 
-This public package is a compact reference for teams that want to introduce
-explicit decision ownership, bounded AI-assisted work, and project-local
-technical documentation.
+BORING-ADMIN-AI-RAIL is a contract-first reference for bounded AI-assisted
+technical work. It helps a host repository record who decides, what is in
+scope, which local rules apply, and which evidence supports a proposed result.
 
-It is for maintainers and small engineering teams who need a repeatable way
-to describe repository boundaries before asking people or AI tools to change
-code. It solves the common starting problem: work begins before ownership,
-scope, and local technical rules are written down.
+This public v0.2.2 kit is for:
 
-It provides a small foundation, neutral project templates, an optional public
-operational reference profile, and an integrity check for this package. It is
-not a complete execution product, hosted service, or provider integration.
+- a person meeting the framework for the first time;
+- a developer or operator preparing a first pilot;
+- a reviewer checking authority, scope, ownership, and evidence;
+- a documentation author separating portable contracts from private
+  project knowledge.
 
-Kit-Version: v0.2.1
-Template-Schema-Version: v0.4.1
+It contains neutral templates, a five-module operational reference, strict
+data contracts, a fictional example, and an offline CLI. It does not call a
+model, authorize tools, execute changes, verify human identity, or provide a
+provider adapter, sandbox, executor, telemetry, or model qualification runtime.
 
-Start with [QUICKSTART.md](./QUICKSTART.md). The stable foundation is in
-[DOCS/FOUNDATION.md](./DOCS/FOUNDATION.md), and the publication boundary is
-defined in [DOCS/PUBLIC-DISTRIBUTION.md](./DOCS/PUBLIC-DISTRIBUTION.md).
+Kit-Version: v0.2.2
+Template-Schema-Version: v0.5.0
 
-The optional operational profile starts with
-[DOCS/OPERATIONAL-REFERENCE-PROFILE.md](./DOCS/OPERATIONAL-REFERENCE-PROFILE.md).
-It adds documentation contracts for bootstrap, roles, modules, workflow, and
-evidence without adding a runtime or executor.
+## Recommended reading
 
-The profile also includes a standard-library Python validator for supplied
-documents and envelopes. It checks contracts only; it does not authorize or
-execute work.
+1. [QUICKSTART.md](./QUICKSTART.md) — English adoption path.
+2. [Czech public documentation](./DOCS/cs/README.md) — onboarding, FAQ,
+   glossary, use cases, and traceability.
+3. [DOCS/BOOTSTRAP-COMPLETE.md](./DOCS/BOOTSTRAP-COMPLETE.md) — the v0.2.2
+   boundary and offline commands.
+4. [DOCS/OPERATIONAL-REFERENCE-PROFILE.md](./DOCS/OPERATIONAL-REFERENCE-PROFILE.md)
+   — roles, modules, workflow, and contract boundaries.
 
-For a concrete, entirely fictional walkthrough, see
-[examples/fictional-project/](./examples/fictional-project/).
+## Offline CLI
 
-The full license is in [LICENSE](./LICENSE).
+```text
+python -m public_rail init --target docs/ai-rail
+python -m public_rail validate --root docs/ai-rail
+python -m public_rail freeze --root docs/ai-rail
+python -m public_rail status --root docs/ai-rail
+python -m public_rail validate-request request.json --root docs/ai-rail
+python -m public_rail validate-output request.json output.json --root docs/ai-rail
+python -m public_rail validate-evidence evidence.json --root .
+```
 
-Changes to this kit are recorded in [CHANGELOG.md](./CHANGELOG.md).
-Release scope and maintenance expectations are in
+The CLI checks supplied documentation and data only. Its result envelope never
+claims execution authorization, identity verification, or execution capability.
+
+The full license is in [LICENSE](./LICENSE). User-visible changes are listed
+in [CHANGELOG.md](./CHANGELOG.md), and package maintenance is described in
 [MAINTENANCE.md](./MAINTENANCE.md).

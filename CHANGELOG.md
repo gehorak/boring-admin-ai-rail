@@ -2,6 +2,27 @@
 
 All notable changes to this public adoption kit are recorded here.
 
+## v0.2.2
+
+### Added
+
+- Added the offline `python -m public_rail` Bootstrap-Complete CLI with
+  `init`, `validate`, `freeze`, `status`, request, output, and evidence checks.
+- Added strict front matter, workspace binding, bootstrap manifest, minimal
+  authorization record, structured scope, and evidence-chain validation.
+- Added strict public schemas, operational templates, offline acceptance tests,
+  and CI jobs for contracts, examples, and CLI smoke coverage.
+
+### Changed
+
+- Replaced the standalone v0.2.1 validator and non-strict contracts with the
+  single v0.2.2 CLI and strict schema directory.
+- Updated template schema metadata to v0.5.0.
+- Reworked the root README around the v0.2.2 audience, offline CLI, and
+  reference-only boundary.
+- Added a Czech public documentation set for onboarding, FAQ, glossary, use
+  cases, and traceability.
+
 ## v0.2.1
 
 ### Added

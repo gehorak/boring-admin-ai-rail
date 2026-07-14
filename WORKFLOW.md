@@ -31,7 +31,7 @@ are in scope.
 
 Each completed step should preserve an intent identifier, scope boundary,
 authorization reference, review result, and closure record. The optional
-`contracts/evidence.schema.json` defines a portable data shape for that rail.
+`schemas/evidence.schema.json` defines a portable data shape for that rail.
 
 ## Exclusion
 
