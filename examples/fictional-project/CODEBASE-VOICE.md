@@ -1,5 +1,13 @@
 # Example Codebase Voice: Lantern Notes
 
+Project: lantern-notes
+Component: codebase-voice-example
+Status: ACTIVE
+Template-Schema-Version: v0.3.0
+Date: 2026-07-14
+Review-Date: 2026-10-14
+Owner: fictional product maintainer
+
 ## Naming Rules
 
 Use names that describe the domain action or boundary. Avoid unexplained

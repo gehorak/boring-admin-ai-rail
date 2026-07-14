@@ -1,5 +1,13 @@
 # Example Architecture Canon: Lantern Notes
 
+Project: lantern-notes
+Component: architecture-canon-example
+Status: ACTIVE
+Template-Schema-Version: v0.3.0
+Date: 2026-07-14
+Review-Date: 2026-10-14
+Owner: fictional product maintainer
+
 ## Canonical Boundaries
 
 - the interface layer accepts user input and presents results;

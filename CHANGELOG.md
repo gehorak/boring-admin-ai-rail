@@ -2,6 +2,19 @@
 
 All notable changes to this public adoption kit are recorded here.
 
+## v0.1.2
+
+### Changed
+
+- Relicensed the public adoption reference kit from Business Source License
+  1.1 to the MIT License.
+- Synchronized the fictional example with the v0.3.0 template metadata and
+  contract lifecycle.
+- Hash-verified repository-control workflow files and pinned their action
+  dependencies.
+- Made the integrity verifier validate manifest version formats instead of a
+  single hard-coded kit version.
+
 ## v0.1.1
 
 ### Added

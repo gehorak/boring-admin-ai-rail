@@ -1,6 +1,6 @@
 # Publication Notice
 
-This is the BORING-ADMIN-AI-RAIL v0.1.1 anonymized adoption reference kit.
+This is the BORING-ADMIN-AI-RAIL v0.1.2 anonymized adoption reference kit.
 
 It contains a limited public documentation and template set. It does not
 claim to be a complete runtime, a hosted service, or an implementation for a

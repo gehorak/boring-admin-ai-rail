@@ -1,5 +1,13 @@
 # Example Project: Lantern Notes
 
+Project: lantern-notes
+Component: project-example
+Status: ACTIVE
+Template-Schema-Version: v0.3.0
+Date: 2026-07-14
+Review-Date: 2026-10-14
+Owner: fictional product maintainer
+
 This example is fictional. It demonstrates how an adopting team can fill the
 public templates without exposing credentials, production data, or private
 implementation details.

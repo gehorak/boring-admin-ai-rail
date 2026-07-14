@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path, PurePosixPath
 
@@ -20,6 +21,9 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(65536), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+SEMVER_PATTERN = re.compile(r"^v\d+\.\d+\.\d+$")
 
 
 def validate_relative_path(value: object) -> str:
@@ -47,12 +51,14 @@ def main() -> None:
         fail("PUBLIC-MANIFEST.json must contain an object.")
 
     files = manifest.get("distribution_files")
-    control_paths = manifest.get("repository_control_paths")
+    control_files = manifest.get("repository_control_files")
     if (
-        manifest.get("kit_version") != "v0.1.1"
-        or manifest.get("template_schema_version") != "v0.3.0"
+        not isinstance(manifest.get("kit_version"), str)
+        or not SEMVER_PATTERN.fullmatch(manifest["kit_version"])
+        or not isinstance(manifest.get("template_schema_version"), str)
+        or not SEMVER_PATTERN.fullmatch(manifest["template_schema_version"])
         or not isinstance(files, list)
-        or not isinstance(control_paths, list)
+        or not isinstance(control_files, list)
     ):
         fail("PUBLIC-MANIFEST.json does not describe the expected public package.")
 
@@ -70,12 +76,21 @@ def main() -> None:
         entries[relative_path] = expected_hash.lower()
         expected_paths.add(relative_path)
 
-    for control_path in control_paths:
-        relative_path = validate_relative_path(control_path)
+    control_entries: dict[str, str] = {}
+    for entry in control_files:
+        if not isinstance(entry, dict):
+            fail("PUBLIC-MANIFEST.json contains an invalid repository-control entry.")
+        relative_path = validate_relative_path(entry.get("path"))
+        if not relative_path.startswith(".github/"):
+            fail(f"Repository-control path must be under .github/: {relative_path}")
+        expected_hash = entry.get("sha256")
+        if not isinstance(expected_hash, str) or len(expected_hash) != 64:
+            fail(f"PUBLIC-MANIFEST.json contains an invalid repository-control SHA-256: {relative_path}")
         if relative_path in entries:
             fail(f"PUBLIC-MANIFEST.json duplicates a distribution path: {relative_path}")
-        if relative_path in expected_paths:
+        if relative_path in control_entries:
             fail(f"PUBLIC-MANIFEST.json contains a duplicate path: {relative_path}")
+        control_entries[relative_path] = expected_hash.lower()
         expected_paths.add(relative_path)
 
     actual_paths = {
@@ -96,6 +111,11 @@ def main() -> None:
         actual_hash = sha256(candidate_root / relative_path)
         if actual_hash != expected_hash:
             fail(f"Hash mismatch: {relative_path}")
+
+    for relative_path, expected_hash in control_entries.items():
+        actual_hash = sha256(candidate_root / relative_path)
+        if actual_hash != expected_hash:
+            fail(f"Repository-control hash mismatch: {relative_path}")
 
     print("PASS: public adoption package integrity")
 

@@ -1,6 +1,6 @@
 {
   "profile": "anonymized_adoption_reference",
-  "kit_version": "v0.1.1",
+  "kit_version": "v0.1.2",
   "template_schema_version": "v0.3.0",
   "distribution_files": [
     {
@@ -13,27 +13,27 @@
     },
     {
       "path": "examples/fictional-project/ARCHITECTURE-CANON.md",
-      "sha256": "1469ec25d8c581f246275771e93ae36059f40be07cf5a3d2f29117b79cfb5015"
+      "sha256": "807af5732e4ecfa1d5beb836b68208f78bcbc2d01398e4669950b921c11a5533"
     },
     {
       "path": "examples/fictional-project/CODEBASE-VOICE.md",
-      "sha256": "eed8e0effa4ef71521f5b6635968a0feb4a00ff279af09969c455a3e0b5804b5"
+      "sha256": "a6e7c34d75e08a828e974efe7b8de3bed636b5b08904d03481f70f0ecc87a086"
     },
     {
       "path": "examples/fictional-project/INTEGRATION-POINTS.md",
-      "sha256": "794d72b573a40b3cc75dcfe75ce1f0b59686cb178ea1614e428d361c0cc666ca"
+      "sha256": "53b5aa1aecb832980a14ccad32693dcd821769320a96a02f1f6eb87e997c7685"
     },
     {
       "path": "examples/fictional-project/PROJECT-CONTEXT.md",
-      "sha256": "6363813c3033dc92c164622bf3fe968108e0a39d98dd9d13e424d6396710feaf"
+      "sha256": "dd87944cbf253caca399ed72dc8a9644356278f34a1eaa7f08085ddc4102a0f3"
     },
     {
       "path": "examples/fictional-project/PROJECT.md",
-      "sha256": "e887b56c28a61cf3f6d74651754e61da7638e8018afa00fcbe96150b63427291"
+      "sha256": "9e13405350eff73523c57d1c8c8d4b5b812bb7dc17fd68db6360953cdf05e093"
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "78a55ef07ab8313122d810f8cf23faa3309ab68922ae29e49b4ba8f07fef9189"
+      "sha256": "20deb7b1ec44863a009159a039192c5000c4831f19682cecfe54d0e876f5ac93"
     },
     {
       "path": "LICENSE",
@@ -45,7 +45,7 @@
     },
     {
       "path": "NOTICE.md",
-      "sha256": "8043ee2cbcf970154880d13f2414f6f0e1907459c2f13cf75b69cc3e09a9410b"
+      "sha256": "299b32d9887371bd5dc0d220659b4561898f48cef2e5fe5ff1bc175efc23e819"
     },
     {
       "path": "QUICKSTART.md",
@@ -53,7 +53,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "68673557cbcaacdfcd8e2738b07f35b4cd08e72791278fe603629821b8ba443e"
+      "sha256": "359b47773f794ffcc4ebd65256d73dbb5f8189d4f5f6797804625d42d2c47f73"
     },
     {
       "path": "templates/ARCHITECTURE-CANON.md",
@@ -77,10 +77,13 @@
     },
     {
       "path": "tests/verify_public_package.py",
-      "sha256": "6de5912fef3dd1d79253bea424fbf43a923ac2fc9f8daa1574285363f9ad1229"
+      "sha256": "914ece2d826d6d5c6f381384ed0d2fa1afaae756e9b58871a7b04a9175d06812"
     }
   ],
-  "repository_control_paths": [
-    ".github/workflows/verify-public-package.yml"
+  "repository_control_files": [
+    {
+      "path": ".github/workflows/verify-public-package.yml",
+      "sha256": "7b005f8f24034e24452c6b1a2bdbac582f99d6086a146f6dc7c07831896d72ac"
+    }
   ]
 }

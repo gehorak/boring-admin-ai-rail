@@ -1,5 +1,13 @@
 # Example Project Context: Lantern Notes
 
+Project: lantern-notes
+Component: project-context-example
+Status: ACTIVE
+Template-Schema-Version: v0.3.0
+Date: 2026-07-14
+Review-Date: 2026-10-14
+Owner: fictional product maintainer
+
 ## Purpose
 
 Help a small team capture decisions and review them later without depending
