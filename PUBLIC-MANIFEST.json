@@ -1,14 +1,15 @@
 {
   "profile": "anonymized_adoption_reference",
-  "version": "v0.1.0",
-  "files": [
+  "kit_version": "v0.1.1",
+  "template_schema_version": "v0.3.0",
+  "distribution_files": [
     {
       "path": "DOCS/FOUNDATION.md",
-      "sha256": "f71cbd1e51c73ca51132ad68b093f5125ff4a333f77b0ee8f882c97f4971f986"
+      "sha256": "80b33066a546ed8f597f15436e26221803a3d25129d2a369ceaae0f2e712a239"
     },
     {
       "path": "DOCS/PUBLIC-DISTRIBUTION.md",
-      "sha256": "58e4e4776da2d2b0ace3f23f588613a9bba266260b6facb00b82b2736e0e533b"
+      "sha256": "7e8c1212d825d88db1f3f9dbeee77dbf29915987109ae179e2b78360616cc06c"
     },
     {
       "path": "examples/fictional-project/ARCHITECTURE-CANON.md",
@@ -31,44 +32,55 @@
       "sha256": "e887b56c28a61cf3f6d74651754e61da7638e8018afa00fcbe96150b63427291"
     },
     {
+      "path": "CHANGELOG.md",
+      "sha256": "78a55ef07ab8313122d810f8cf23faa3309ab68922ae29e49b4ba8f07fef9189"
+    },
+    {
       "path": "LICENSE",
       "sha256": "88813d010a3eca7c063627832b9f39e600753b4105fe4aed192e52e1cf2dce04"
     },
     {
+      "path": "MAINTENANCE.md",
+      "sha256": "e9e647c82dcfb736d67a07ad73293d81116eb41275a0e87dc08c0ddf4e0ffac7"
+    },
+    {
       "path": "NOTICE.md",
-      "sha256": "5fe97dda2a151d88fa5190d1addfd75225f2975015b4069c2859b75cb164857f"
+      "sha256": "b5d5cbc8dd53a9f6fcfcdb51750897f8d5efe1d8c656aaf6c3241757b89decbd"
     },
     {
       "path": "QUICKSTART.md",
-      "sha256": "1bef56b6365ebddb725b4a6f39bf75d13944f26f9fcec728fa2d66a534a08d57"
+      "sha256": "fd5b2f1f2596a29011d850ae0b6e7eaa20f5fc42f691b90868ac1bec7b69308e"
     },
     {
       "path": "README.md",
-      "sha256": "e5c2edb2de880395fc871a47daa64fa8fc29a957411c317e5052fee5ca97f2eb"
+      "sha256": "68673557cbcaacdfcd8e2738b07f35b4cd08e72791278fe603629821b8ba443e"
     },
     {
       "path": "templates/ARCHITECTURE-CANON.md",
-      "sha256": "763539e5901354fc3505f1f5d427bc7278af246d94386d3b17f1d5813631dea4"
+      "sha256": "d14891e986e9ffdae0c9ca181fbb18f3b4d5a98f659e9e2db2af22083492db65"
     },
     {
       "path": "templates/CODEBASE-VOICE.md",
-      "sha256": "f5942c9ce78898adcc064ae2c3c1f839138926dd795bd15d901c5c97fef20868"
+      "sha256": "8449e0fbe7f9702d27e9b8640815786b1c3d0471692b0146a2781713db695055"
     },
     {
       "path": "templates/INTEGRATION-POINTS.md",
-      "sha256": "697540c034a8e5acd0a60ab7d819ecf38373e5e2194a57ca36fca462c10e7056"
+      "sha256": "7de35f0ca59ac87b3d6e8856d330a353b1238a9a4d1fb255cdd8eef925a4f7f7"
     },
     {
       "path": "templates/PROJECT-CONTEXT.md",
-      "sha256": "8ea72263e162fd1bc0ae14524cf0c297f102a52f26877ffa1660aa129b3090a3"
+      "sha256": "2d9b4a7a44780f1e940599611bded2450eeda25dc6156ab10b5bd1087804d5ce"
     },
     {
       "path": "templates/PROJECT.md",
-      "sha256": "3dbb4eac67804450bb385f8dac50d4b7971dbc22f43d9ca14a87cff5e50a094b"
+      "sha256": "0b961df2214da66f06a67339d90b002a7a981ba259920c685fd8d7151fc5e7a2"
     },
     {
       "path": "tests/verify_public_package.py",
-      "sha256": "ac9e04c515df2e95695c51f9b52d0d1b4a3038ee0794de005d3a83253855eae5"
+      "sha256": "6de5912fef3dd1d79253bea424fbf43a923ac2fc9f8daa1574285363f9ad1229"
     }
+  ],
+  "repository_control_paths": [
+    ".github/workflows/verify-public-package.yml"
   ]
 }

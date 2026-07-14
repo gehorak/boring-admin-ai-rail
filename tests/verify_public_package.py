@@ -46,8 +46,14 @@ def main() -> None:
     if not isinstance(manifest, dict):
         fail("PUBLIC-MANIFEST.json must contain an object.")
 
-    files = manifest.get("files")
-    if manifest.get("version") != "v0.1.0" or not isinstance(files, list):
+    files = manifest.get("distribution_files")
+    control_paths = manifest.get("repository_control_paths")
+    if (
+        manifest.get("kit_version") != "v0.1.1"
+        or manifest.get("template_schema_version") != "v0.3.0"
+        or not isinstance(files, list)
+        or not isinstance(control_paths, list)
+    ):
         fail("PUBLIC-MANIFEST.json does not describe the expected public package.")
 
     expected_paths = {"PUBLIC-MANIFEST.json"}
@@ -62,6 +68,14 @@ def main() -> None:
         if relative_path in entries:
             fail(f"PUBLIC-MANIFEST.json contains a duplicate path: {relative_path}")
         entries[relative_path] = expected_hash.lower()
+        expected_paths.add(relative_path)
+
+    for control_path in control_paths:
+        relative_path = validate_relative_path(control_path)
+        if relative_path in entries:
+            fail(f"PUBLIC-MANIFEST.json duplicates a distribution path: {relative_path}")
+        if relative_path in expected_paths:
+            fail(f"PUBLIC-MANIFEST.json contains a duplicate path: {relative_path}")
         expected_paths.add(relative_path)
 
     actual_paths = {

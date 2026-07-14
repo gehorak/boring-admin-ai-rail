@@ -2,9 +2,10 @@
 
 Project: <host-project-name>
 Component: project-layer-template
-Status: GUIDELINE
-Version: v0.3.0
+Status: DRAFT
+Template-Schema-Version: v0.3.0
 Date: <YYYY-MM-DD>
+Review-Date: <YYYY-MM-DD>
 
 ## 1. Project Identity
 
@@ -23,18 +24,24 @@ Date: <YYYY-MM-DD>
 
 ## 4. Architectural Canon
 
-- <canonical layering or dependency rule>
-- <canonical integration rule>
+Canonical source: `./ARCHITECTURE-CANON.md`
+
+Summary:
+- <one or two project-level boundary rules>
 
 ## 5. Codebase Voice
 
-- naming: <expected naming style>
-- tests: <test expectations>
-- comments: <comment expectations>
+Canonical source: `./CODEBASE-VOICE.md`
+
+Summary:
+- <one or two project-level conventions>
 
 ## 6. Approved Integration Points
 
-- <approved boundary or seam>
+Canonical source: `./INTEGRATION-POINTS.md`
+
+Summary:
+- <one or two approved boundary categories>
 
 ## 7. Do-Not-Touch Areas
 
@@ -52,3 +59,10 @@ Date: <YYYY-MM-DD>
 ## 10. Review Focus
 
 - <highest-risk local review focus>
+
+## 11. Contract Precedence
+
+- this document is the top-level index and project contract;
+- a specialized contract overrides its summary in this document;
+- a disagreement between documents is a validation failure and must be resolved
+  by the human decision owner before implementation.

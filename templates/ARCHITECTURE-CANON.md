@@ -2,9 +2,10 @@
 
 Project: <host-project-name>
 Component: architecture-canon-template
-Status: GUIDELINE
-Version: v0.3.0
+Status: DRAFT
+Template-Schema-Version: v0.3.0
 Date: <YYYY-MM-DD>
+Review-Date: <YYYY-MM-DD>
 
 Canonical boundaries:
 - <boundary>
