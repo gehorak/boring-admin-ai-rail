@@ -1,10 +1,10 @@
 # Publication Notice
 
-This is the BORING-ADMIN-AI-RAIL v0.1.3 anonymized adoption reference kit.
+This is the BORING-ADMIN-AI-RAIL v0.2.1 anonymized adoption reference kit.
 
 It contains a limited public documentation and template set. It does not
-claim to be a complete runtime, a hosted service, or an implementation for a
-particular AI provider.
+claim to be a complete runtime, a hosted service, an executor, or an
+implementation for a particular AI provider.
 
 The package-integrity check uses only the Python standard library.
 

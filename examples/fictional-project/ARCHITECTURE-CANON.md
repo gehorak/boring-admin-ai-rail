@@ -3,10 +3,11 @@
 Project: lantern-notes
 Component: architecture-canon-example
 Contract-Status: ACTIVE
-Template-Schema-Version: v0.3.1
+Template-Schema-Version: v0.4.1
 Date: 2026-07-14
 Review-Date: 2026-10-14
 Owner: fictional product maintainer
+Document-Conflict: NONE
 
 ## Canonical Boundaries
 

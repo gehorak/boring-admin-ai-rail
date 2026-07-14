@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boring-admin-ai-rail/public-operational/output.schema.json",
+  "title": "Public Operational Output Contract",
+  "description": "Documentation-only output data contract. It does not validate, run tools, or execute changes.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "request_id",
+    "intent_id",
+    "role",
+    "scope_boundary",
+    "action_mode",
+    "summary",
+    "authority_refs_used",
+    "execution_capability"
+  ],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1 },
+    "intent_id": { "type": "string", "minLength": 1 },
+    "role": { "type": "string", "enum": ["Architect-AI", "Senior Developer", "Reviewer / Auditor"] },
+    "scope_boundary": { "type": "string", "minLength": 1 },
+    "action_mode": { "type": "string", "enum": ["analyze", "propose_changes", "review", "record_evidence"] },
+    "summary": { "type": "string", "minLength": 1 },
+    "rationale": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "authority_refs_used": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "artifact_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "execution_capability": { "const": false }
+  }
+}

@@ -2,6 +2,38 @@
 
 All notable changes to this public adoption kit are recorded here.
 
+## v0.2.1
+
+### Added
+
+- Added standard-library Python validation for active document metadata and
+  public operational request and output envelopes.
+- Added negative test coverage for missing ownership, expired reviews,
+  unresolved conflicts, bootstrap readiness, module ownership, role confusion,
+  scope expansion, repository-content authority, and execution capability.
+
+### Changed
+
+- Added `Document-Conflict: NONE` to public templates and examples.
+- Updated template schema metadata to v0.4.1.
+
+## v0.2.0
+
+### Added
+
+- Added an optional public operational reference profile for bootstrap,
+  workflow, four roles, five-module composition, host assembly, and bootstrap
+  review.
+- Added documentation-only request, output, and evidence data contracts.
+- Added a Czech quickstart for the operational profile.
+
+### Changed
+
+- Clarified that the public profile contains no request gate, output validator,
+  tool gate, sandbox, executor, provider adapter, telemetry, or model
+  qualification runtime.
+- Updated template schema metadata to v0.4.0.
+
 ## v0.1.3
 
 ### Changed

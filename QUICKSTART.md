@@ -22,6 +22,14 @@ repository.
    `DRAFT` contract as a reason to ask the human owner rather than infer a
    decision.
 
+## Optional operational profile
+
+When the adopting project needs documented bootstrap, role, module, workflow,
+and evidence conventions, continue with
+[`DOCS/OPERATIONAL-REFERENCE-PROFILE.md`](./DOCS/OPERATIONAL-REFERENCE-PROFILE.md).
+That profile is documentation-first and does not install a runtime, tool gate,
+or executor.
+
 Adoption is complete when the decision owner is named; in-scope,
 out-of-scope, and do-not-touch areas are non-empty; relevant integration trust
 boundaries are recorded; and all active documents have been human-approved.

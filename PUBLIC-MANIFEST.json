@@ -1,89 +1,47 @@
 {
   "profile": "anonymized_adoption_reference",
-  "kit_version": "v0.1.3",
-  "template_schema_version": "v0.3.1",
+  "kit_version": "v0.2.1",
+  "template_schema_version": "v0.4.1",
   "distribution_files": [
-    {
-      "path": "DOCS/FOUNDATION.md",
-      "sha256": "857cfb229868af4eca96598fa47e96f69d2f6d56be2ff7f087d0d28e6b1755c8"
-    },
-    {
-      "path": "DOCS/PUBLIC-DISTRIBUTION.md",
-      "sha256": "d07aba06886db73833f612f45572cb567e33c99a7934c3b79aabfe0a4e8e7a2e"
-    },
-    {
-      "path": "examples/fictional-project/ARCHITECTURE-CANON.md",
-      "sha256": "27f08d88a771b011d3fa2a3d8a3cfcc72728f0acbbaf6d24edefa4b948dae52b"
-    },
-    {
-      "path": "examples/fictional-project/CODEBASE-VOICE.md",
-      "sha256": "80a70df6b7341b55c23f82280c91e394442512e67f8e5269541f0b573a1ff115"
-    },
-    {
-      "path": "examples/fictional-project/INTEGRATION-POINTS.md",
-      "sha256": "a113d80ff5f242776a46b6beb5ed8d277d2dffbbd2a476c09991ca992226bfd4"
-    },
-    {
-      "path": "examples/fictional-project/PROJECT-CONTEXT.md",
-      "sha256": "87312d10db7a8cb984f0a29715a70245bed48c59c39ef71c92498ec823f8b760"
-    },
-    {
-      "path": "examples/fictional-project/PROJECT.md",
-      "sha256": "1f57c43f5a8169fb5c65203284e1db463745b933dda732300f0d1f0ba9e4bca6"
-    },
-    {
-      "path": "CHANGELOG.md",
-      "sha256": "1a5f5640f6e78bbf6b254faf14d3482261e5624cfb68241e2a491962eea9800c"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "0be0cd1991c7ea89f0c1c7602b7be1a14ef0c889a9e5c91dd4023c80de740785"
-    },
-    {
-      "path": "MAINTENANCE.md",
-      "sha256": "e9e647c82dcfb736d67a07ad73293d81116eb41275a0e87dc08c0ddf4e0ffac7"
-    },
-    {
-      "path": "NOTICE.md",
-      "sha256": "1a1a5e95d32cd777837526e6a92e733af5be999245388dfcfbc8aea27c533bdd"
-    },
-    {
-      "path": "QUICKSTART.md",
-      "sha256": "12b1074ce649281de378ebf65c654953698dd2942d592788cf4367a3f58c408b"
-    },
-    {
-      "path": "README.md",
-      "sha256": "c43fa45820476b567a989bcd00bb4338c346db29647f7c60804a0881bb5fad75"
-    },
-    {
-      "path": "templates/ARCHITECTURE-CANON.md",
-      "sha256": "67faf31ea86f6e5e8e2acf247e6ab0a00ee392faf706ebd3ebacb768a2190441"
-    },
-    {
-      "path": "templates/CODEBASE-VOICE.md",
-      "sha256": "b5f08f745538dd70581c82ffd4afb07a0c6f5f44040e8e48a3fdfcc81e7b4545"
-    },
-    {
-      "path": "templates/INTEGRATION-POINTS.md",
-      "sha256": "3c4843af57dfe88e4a2b607d31001e3f55719b1cb3f07587634643b70919b296"
-    },
-    {
-      "path": "templates/PROJECT-CONTEXT.md",
-      "sha256": "c38546420d58b151b1f617a75772e1b80bc404199b075c9e0db505cabc463515"
-    },
-    {
-      "path": "templates/PROJECT.md",
-      "sha256": "467610685a387dd634818bdcbfefc4cf4016ad9b1795744b3cd505fad39c1599"
-    },
-    {
-      "path": "tests/verify_public_package.py",
-      "sha256": "d1c0098d10ae6b2fa15c64e39af20264aa6f6314a68b53e67c1b09519a80b4cc"
-    }
+    { "path": "ARCHITECTURE/BOOTSTRAP-WORKFLOW.md", "sha256": "3eeadaff9f4dd3234cc4a736070f8766f2732f633262c979c818fca1f19acbe9" },
+    { "path": "ARCHITECTURE/MODULE-COMPOSITION.md", "sha256": "aa94878db7ef6d837416714e5253449efe856151064ac45c374dedf6472e259a" },
+    { "path": "CHANGELOG.md", "sha256": "a93be660afa9c5ca9df36f295eb1e393cf345ed809570d7e7699abb957db1fd2" },
+    { "path": "DOCS/FOUNDATION.md", "sha256": "857cfb229868af4eca96598fa47e96f69d2f6d56be2ff7f087d0d28e6b1755c8" },
+    { "path": "DOCS/MINIMUM-HOST-REPO-ASSEMBLY.md", "sha256": "c15801965c0ebc850af103369352d81fd1a9f1c77175057f036d75c4998f033f" },
+    { "path": "DOCS/OPERATIONAL-REFERENCE-PROFILE.md", "sha256": "7eec9c6a245cbfd951ac7f6a91022a686d56fc3d9e5a3c8d3cb6b205dcae2055" },
+    { "path": "DOCS/PUBLIC-DISTRIBUTION.md", "sha256": "485619cb151bf9965a9885940d47903449e42df0884dcb5cae0c860e4eac6f5b" },
+    { "path": "DOCS/ROLE-MODEL.md", "sha256": "4073a28028bfc26d8d772d68b81c69d673b7e0514e5f5f8d275cfae373a59427" },
+    { "path": "LICENSE", "sha256": "0be0cd1991c7ea89f0c1c7602b7be1a14ef0c889a9e5c91dd4023c80de740785" },
+    { "path": "MAINTENANCE.md", "sha256": "ffabea500768f0f7d5bbfeb6679aa8374e19142ecde0e386d56f72e3b0ce5fac" },
+    { "path": "NOTICE.md", "sha256": "14cc0b1a6e9c39c624d33af745aead7c9d2aae4ef7229a70bf3f53d4c48180c2" },
+    { "path": "QUICKSTART-CS.md", "sha256": "6b00c50f7e736f23e0ecae53c34d2946cae6b516833a27328ba01eed4f9e69d2" },
+    { "path": "QUICKSTART.md", "sha256": "df2bfe4e35822b20a6d998b79a4dbdef7303c9153d97b2799f6cc0a00ae36bb7" },
+    { "path": "README.md", "sha256": "1b1a38d510528b307a0f304cf0aefdd630d42b4cbfd7e607e99dba150f86f467" },
+    { "path": "ROLES/20-system-architect.md", "sha256": "8ce1486d2d8316f5521dff8013c90ed9672f2ce5d0e82c75c435a1aacc99830e" },
+    { "path": "ROLES/30-architect-ai.md", "sha256": "b54b89f8ff79ec180521e1b5283a0de4fb1354f7be5377f8dd67cc783a774741" },
+    { "path": "ROLES/40-senior-developer.md", "sha256": "8d99d0ac7f7820ce9d5a7dbee6171e7f6bdfeb329fefd3ea7f8a4b7bfdfa480c" },
+    { "path": "ROLES/70-reviewer-auditor.md", "sha256": "fdb40e6730071ee1cd419ad9a9549af4d9b62edd8e343ff5e8819f00cb1eca1a" },
+    { "path": "WORKFLOW.md", "sha256": "90c80fe1a8bc66264ec86651ec410625f0c68c7416685a38db55ad4f096c6edc" },
+    { "path": "contracts/evidence.schema.json", "sha256": "1fef964fe5878ee9d0c7a4aa54feef728925f15616b40ec2ac75cf04639472a9" },
+    { "path": "contracts/output.schema.json", "sha256": "f1287172a2127799519568a0ca1884ced1c4ad360f4aece9cf34be79b5ea59d0" },
+    { "path": "contracts/request.schema.json", "sha256": "b1c1314f56f207a531c18f6a2ab43d095c77e8db547d68d92f0cba2a92038863" },
+    { "path": "examples/fictional-project/ARCHITECTURE-CANON.md", "sha256": "43280fa630eb31866eb5167f64bbf680139e03f2b723d111a2aad5a0de2682df" },
+    { "path": "examples/fictional-project/CODEBASE-VOICE.md", "sha256": "039133c2827d611be52064db233ee37395f0f3f0cf64b7afa2046eedcc0e6971" },
+    { "path": "examples/fictional-project/INTEGRATION-POINTS.md", "sha256": "d54126d26032ea43af906e3468dc24a834c34311c6c3324a3828eff0944d34a8" },
+    { "path": "examples/fictional-project/PROJECT-CONTEXT.md", "sha256": "9c8ce29b0ff57363dac57233e8c27f3e3b483f4ced70931ddfdc5563daa867dd" },
+    { "path": "examples/fictional-project/PROJECT.md", "sha256": "2ed12a72808e9eae1ae36941975768ac81a3e74e8ce9f2343ce3835616f666df" },
+    { "path": "templates/ARCHITECTURE-CANON.md", "sha256": "2ca1e1e22a2d51fa40d8ad4237b6f7d22b2d4882e853153534af21c4c8d87e63" },
+    { "path": "templates/BOOTSTRAP-REVIEW.md", "sha256": "9e72569532abf43487dd2cae195b3c8ed7d854213b6f0581ff607bb36253d713" },
+    { "path": "templates/CODEBASE-VOICE.md", "sha256": "d1fab58bea716ad1e6078fd3cab9bc86b4f71dad30f48e0b39aea63e129527ff" },
+    { "path": "templates/INTEGRATION-POINTS.md", "sha256": "2fd640d3fd876e9a23f61d9d3a18fa8122d6d495fe3961dc6f16985e8ff2ac2f" },
+    { "path": "templates/PROJECT-CONTEXT.md", "sha256": "06a4caf30f10f91b47cb360e37065149b7bc6c9b111da170e1814a9c26524ec3" },
+    { "path": "templates/PROJECT.md", "sha256": "257efcb51f4b664aac18f075bfb3243155167709b9a144f64a1b60caaefbfc84" },
+    { "path": "tests/test_operational_validation.py", "sha256": "b7e8c7e451a67fa297fe750d2935c32a282d1a06c8849a5af90f345928ae23b9" },
+    { "path": "tests/verify_public_package.py", "sha256": "d1c0098d10ae6b2fa15c64e39af20264aa6f6314a68b53e67c1b09519a80b4cc" },
+    { "path": "validators/__init__.py", "sha256": "da69e4b8ecd07d88008cf0721e8e23d8a0760628448a039280eedb80ae3922b6" },
+    { "path": "validators/validate_operational_profile.py", "sha256": "a3438f89e45f4e714fa6ee821da0b5aa7cbc1de139b00f27cb9de92c159994e6" }
   ],
   "repository_control_files": [
-    {
-      "path": ".github/workflows/verify-public-package.yml",
-      "sha256": "7b005f8f24034e24452c6b1a2bdbac582f99d6086a146f6dc7c07831896d72ac"
-    }
+    { "path": ".github/workflows/verify-public-package.yml", "sha256": "7b005f8f24034e24452c6b1a2bdbac582f99d6086a146f6dc7c07831896d72ac" }
   ]
 }
