@@ -6,7 +6,7 @@
   "operational_template_schema_version": "v0.5.0",
   "contract_data_schema_version": "v0.5.0",
   "distribution_files": [
-    {"path":".gitattributes","sha256":"0f2adee955833ec257b640fa5a6480ccaa7d6c92f528c7c0e2527a129fa38e5b"},
+    {"path":".gitattributes","sha256":"5770cbb52725240d92321110e99d157c0c93b752536d37c4ce1838203c992683"},
     {"path":"ARCHITECTURE/BOOTSTRAP-WORKFLOW.md","sha256":"3eeadaff9f4dd3234cc4a736070f8766f2732f633262c979c818fca1f19acbe9"},
     {"path":"ARCHITECTURE/MODULE-COMPOSITION.md","sha256":"aa94878db7ef6d837416714e5253449efe856151064ac45c374dedf6472e259a"},
     {"path":"CHANGELOG.md","sha256":"9e1b8156ca0b251659e58eea7a864729c5c1376cc7b1b11461df0b9a33d6905f"},
