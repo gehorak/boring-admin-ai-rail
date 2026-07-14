@@ -21,6 +21,7 @@ DOCUMENT_TYPES = {
 }
 AUTHORITATIVE_DOCUMENTS = tuple(name for name in DOCUMENT_TYPES if name != "BOOTSTRAP-REVIEW.md")
 PLACEHOLDER = re.compile(r"<[^>]+>")
+MAX_DOCUMENT_BYTES = 1_048_576
 
 
 def sha256(path: Path) -> str:
@@ -33,8 +34,10 @@ def sha256(path: Path) -> str:
 
 def read_document(path: Path) -> Document:
     try:
+        if path.stat().st_size > MAX_DOCUMENT_BYTES:
+            raise ValueError(f"{path.name}: document input exceeds {MAX_DOCUMENT_BYTES} bytes.")
         return parse(path.read_text(encoding="utf-8"))
-    except (OSError, FrontMatterError) as exc:
+    except (OSError, FrontMatterError, ValueError) as exc:
         raise ValueError(f"{path.name}: {exc}") from exc
 
 

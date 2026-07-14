@@ -12,9 +12,13 @@ from .paths import reject_links
 from .results import Result
 from .schema import validate as validate_schema
 
+MAX_JSON_BYTES = 1_048_576
+
 
 def load_json(path: Path) -> dict[str, Any]:
     try:
+        if path.stat().st_size > MAX_JSON_BYTES:
+            raise ValueError(f"{path.name}: JSON input exceeds {MAX_JSON_BYTES} bytes.")
         value = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         raise ValueError(f"Cannot read {path.name}: {exc}") from exc
@@ -95,10 +99,13 @@ def manifest(root: Path, expected_workspace: str) -> tuple[dict[str, Any] | None
 
 def status(root: Path, today: date | None = None) -> Result:
     today = today or date.today()
-    root = root.resolve()
     link_paths = reject_links(root) if root.is_dir() else []
     if link_paths:
         return Result("BLOCKED", [f"Symbolic link or junction: {path}." for path in link_paths])
+    try:
+        root = root.resolve(strict=True)
+    except OSError as exc:
+        return Result("BLOCKED", [f"Cannot resolve contract root: {exc}."])
     binding, binding_findings = workspace(root)
     if binding is None or binding_findings:
         return Result("UNPACKED", binding_findings)

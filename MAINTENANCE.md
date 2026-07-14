@@ -18,10 +18,13 @@ support, execution runtime, or a service-level commitment.
 
 ## Versioning
 
-`Kit-Version` identifies the public distribution. `Template-Schema-Version`
-identifies the independent contract format used by the templates. A schema
-change does not by itself imply a kit release, and a kit release does not by
-itself imply a schema change.
+`Kit-Version` identifies the public distribution. The manifest carries three
+independent contract axes: `base_template_schema_version` for the compact
+adoption templates, `operational_template_schema_version` for the optional
+operational templates, and `contract_data_schema_version` for JSON contracts.
+`template_schema_version` remains the compatibility alias for the operational
+template axis. A change to one axis does not by itself imply a kit release or a
+change to another axis.
 
 ## Maintenance boundary
 

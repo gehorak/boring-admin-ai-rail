@@ -27,7 +27,8 @@ This profile includes no request gate, output gate, tool gate, sandbox,
 executor, provider adapter, telemetry, operational logging, or model
 qualification runtime. JSON Schema files in `schemas/` describe data, and
 `python -m public_rail` validates supplied artifacts only; it neither grants
-authorization nor executes work.
+authorization nor executes work. It can check the consistency of a supplied
+model registry and evaluation report, but does not run those evaluations.
 
 ## Authority
 

@@ -75,18 +75,21 @@ def main(argv: list[str] | None = None) -> int:
     evidence_parser.add_argument("evidence", type=Path)
     evidence_parser.add_argument("--root", type=Path, required=True)
     args = parser.parse_args(argv)
-    if args.command == "init":
-        return emit(init(args.target, args.force))
-    if args.command == "validate":
-        state = status(args.root)
-        result = Result("STRUCTURALLY_VALID" if state.result in {"MAPPED", "READY"} else state.result, state.findings, state.validated_artifacts)
-        return emit(result)
-    if args.command == "freeze":
-        return emit(freeze(args.root, args.manifest_id))
-    if args.command == "status":
-        return emit(status(args.root), text_only=True)
-    if args.command == "validate-request":
-        return emit(validate_request(args.root, args.request))
-    if args.command == "validate-output":
-        return emit(validate_output(args.root, args.request, args.output))
-    return emit(validate_evidence(args.root, args.evidence))
+    try:
+        if args.command == "init":
+            return emit(init(args.target, args.force))
+        if args.command == "validate":
+            state = status(args.root)
+            result = Result("STRUCTURALLY_VALID" if state.result in {"MAPPED", "READY"} else state.result, state.findings, state.validated_artifacts)
+            return emit(result)
+        if args.command == "freeze":
+            return emit(freeze(args.root, args.manifest_id))
+        if args.command == "status":
+            return emit(status(args.root), text_only=True)
+        if args.command == "validate-request":
+            return emit(validate_request(args.root, args.request))
+        if args.command == "validate-output":
+            return emit(validate_output(args.root, args.request, args.output))
+        return emit(validate_evidence(args.root, args.evidence))
+    except Exception:
+        return emit(Result("BLOCKED", ["Invalid input or validation failure."]))

@@ -18,9 +18,14 @@ It contains neutral templates, a five-module operational reference, strict
 data contracts, a fictional example, and an offline CLI. It does not call a
 model, authorize tools, execute changes, verify human identity, or provide a
 provider adapter, sandbox, executor, telemetry, or model qualification runtime.
+It can validate supplied model-registry and evaluation evidence, but does not
+run a model evaluation or verify its issuer.
 
 Kit-Version: v0.2.2
 Template-Schema-Version: v0.5.0
+Base-Template-Schema-Version: v0.4.1
+Operational-Template-Schema-Version: v0.5.0
+Contract-Data-Schema-Version: v0.5.0
 
 ## Recommended reading
 
@@ -31,6 +36,8 @@ Template-Schema-Version: v0.5.0
    boundary and offline commands.
 4. [DOCS/OPERATIONAL-REFERENCE-PROFILE.md](./DOCS/OPERATIONAL-REFERENCE-PROFILE.md)
    — roles, modules, workflow, and contract boundaries.
+5. [DOCS/SECURITY-HARDENING.md](./DOCS/SECURITY-HARDENING.md) — public
+   hardening guarantees, model-evaluation evidence, and internal-plane limits.
 
 ## Offline CLI
 

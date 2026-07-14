@@ -22,6 +22,11 @@ All notable changes to this public adoption kit are recorded here.
   reference-only boundary.
 - Added a Czech public documentation set for onboarding, FAQ, glossary, use
   cases, and traceability.
+- Hardened the public validator with segment-aware scope globs, canonical
+  parent-link containment, timezone-aware authorization times, human-only
+  System Architect authority, frozen project mapping, strict schema-keyword
+  checking, type-aware evidence artifacts, and offline model-evaluation
+  evidence checks.
 
 ## v0.2.1
 

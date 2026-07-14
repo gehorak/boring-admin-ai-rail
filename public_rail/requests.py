@@ -7,8 +7,9 @@ from typing import Any
 
 from .authorization import validate_authorization
 from .bootstrap import load_json, manifest, status, workspace
-from .documents import read_document, sha256, validate_active_document
-from .paths import PathError, in_scope, normal_relative, resolve_below
+from .documents import comma_values, read_document, sha256, validate_active_document
+from .paths import PathError, in_scope, normal_glob, normal_relative, resolve_below
+from .qualification import validate_model_qualification
 from .results import Result
 from .schema import validate as validate_schema
 
@@ -40,8 +41,8 @@ def scope_findings(scope: object) -> list[str]:
     for field in ("allowed_paths", "denied_paths"):
         for pattern in scope.get(field, []):
             try:
-                normal_relative(pattern.replace("/**", "/placeholder") if isinstance(pattern, str) and pattern.endswith("/**") else pattern)
-            except (AttributeError, PathError):
+                normal_glob(pattern)
+            except PathError:
                 findings.append(f"scope.{field} contains an unsafe path pattern.")
     return findings
 
@@ -57,6 +58,23 @@ def validate_request(root: Path, request_path: Path) -> Result:
             findings.append(f"request: missing {field}.")
     if request.get("execution_capability") is not False:
         findings.append("request: execution_capability must be false.")
+    actor = request.get("actor")
+    if not isinstance(actor, dict):
+        findings.append("request: actor must be an object.")
+    else:
+        actor_type = actor.get("type")
+        if actor_type not in {"human", "ai"}:
+            findings.append("request: actor.type must be human or ai.")
+        if not isinstance(actor.get("id"), str) or not actor["id"]:
+            findings.append("request: actor.id must be non-empty.")
+        if actor_type == "ai" and not isinstance(actor.get("delegation_ref"), str):
+            findings.append("request: AI actor requires delegation_ref.")
+        if actor_type == "ai" and request.get("role") == "System Architect":
+            findings.append("request: System Architect authority is human-only.")
+        if actor_type == "ai":
+            findings.extend(validate_model_qualification(root, actor))
+        elif any(actor.get(field) is not None for field in ("model_registry_ref", "model_evaluation_ref", "model_version")):
+            findings.append("request: human actor cannot declare a model qualification.")
     if request.get("role") not in ROLE_ACTIONS:
         findings.append("request: unknown role.")
     elif request.get("action_mode") not in ROLE_ACTIONS[request["role"]]:
@@ -79,8 +97,22 @@ def validate_request(root: Path, request_path: Path) -> Result:
         findings.append("request: selected_modules must be non-empty.")
     if not isinstance(surfaces, list) or not surfaces:
         findings.append("request: change_surfaces must be non-empty.")
+    project_modules: set[str] = set()
+    project_surfaces: set[str] = set()
+    try:
+        project = read_document(root / "PROJECT.md")
+        project_modules = set(comma_values(project, "Selected-Modules"))
+        project_surfaces = set(comma_values(project, "Change-Surfaces"))
+    except ValueError as exc:
+        findings.append(f"request: cannot read frozen PROJECT.md: {exc}")
+    request_modules = {item for item in modules if isinstance(item, str)} if isinstance(modules, list) else set()
+    if request_modules and not request_modules <= project_modules:
+        findings.append("request: selected_modules are not contained in frozen PROJECT.md.")
     for surface in surfaces if isinstance(surfaces, list) else []:
-        if MODULE_OWNERS.get(surface) not in modules:
+        if not isinstance(surface, str) or surface not in project_surfaces:
+            findings.append(f"request: {surface!r} is not a frozen PROJECT.md change surface.")
+            continue
+        if MODULE_OWNERS.get(surface) not in request_modules:
             findings.append(f"request: {surface} has no selected owner module.")
     authoritative = {item["path"]: item for item in manifest_value.get("documents", [])} if manifest_value else {}
     sources = request.get("authority_sources")
@@ -92,6 +124,7 @@ def validate_request(root: Path, request_path: Path) -> Result:
             continue
         try:
             path = normal_relative(source.get("path"))
+            resolve_below(root, path)
             if source["kind"] != "decision_record":
                 if path not in authoritative:
                     findings.append(f"request: authority document is not frozen: {path}.")
@@ -119,6 +152,8 @@ def validate_output(root: Path, request_path: Path, output_path: Path) -> Result
     for key in ("request_id", "intent_id", "workspace_id", "role", "action_mode"):
         if output.get(key) != request.get(key):
             findings.append(f"output: {key} mismatch.")
+    if output.get("actor") != request.get("actor"):
+        findings.append("output: actor or model version mismatch.")
     if output.get("execution_capability") is not False:
         findings.append("output: execution_capability must be false.")
     artifacts = output.get("artifacts")
@@ -132,6 +167,7 @@ def validate_output(root: Path, request_path: Path, output_path: Path) -> Result
                 continue
             try:
                 path = normal_relative(artifact.get("path"))
+                resolve_below(root, path)
                 if not in_scope(path, scope["allowed_paths"], scope["denied_paths"]):
                     findings.append(f"output: artifact outside scope: {path}.")
                 if artifact.get("change_kind") not in scope["allowed_change_kinds"]:

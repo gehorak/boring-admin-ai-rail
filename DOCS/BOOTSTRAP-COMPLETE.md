@@ -7,6 +7,10 @@ ownership declarations, scope, bootstrap review, hashes, authorization-record
 binding, and evidence-chain order. It never calls a model, enables a tool,
 executes a change, verifies real identity, or issues a capability.
 
+For an AI actor, it also validates a supplied model registry and evaluation
+report as offline evidence. This is not a model qualification runtime and does
+not verify the report issuer or grant a capability.
+
 ## Offline workflow
 
 ```text
@@ -37,5 +41,7 @@ Authority documents must be inside the contract root, use active strict front
 matter, have a human owner, current review date, no conflict, and a matching
 bootstrap-manifest hash. Authorization records are checked for local
 consistency only; they are not proof of a human identity or organizational
-authority. Structured scopes reject traversal, absolute paths, denied paths,
-and out-of-scope output artifacts.
+authority. The System Architect role is human-only. Structured scopes use
+segment-aware POSIX globs, reject traversal and invalid path characters, give
+deny rules priority, and reject symbolic links and Windows junctions in every
+existing parent component.

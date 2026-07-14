@@ -71,6 +71,12 @@ def main() -> None:
         or not SEMVER_PATTERN.fullmatch(manifest["kit_version"])
         or not isinstance(manifest.get("template_schema_version"), str)
         or not SEMVER_PATTERN.fullmatch(manifest["template_schema_version"])
+        or not isinstance(manifest.get("base_template_schema_version"), str)
+        or not SEMVER_PATTERN.fullmatch(manifest["base_template_schema_version"])
+        or not isinstance(manifest.get("operational_template_schema_version"), str)
+        or not SEMVER_PATTERN.fullmatch(manifest["operational_template_schema_version"])
+        or not isinstance(manifest.get("contract_data_schema_version"), str)
+        or not SEMVER_PATTERN.fullmatch(manifest["contract_data_schema_version"])
         or not isinstance(files, list)
         or not isinstance(control_files, list)
     ):
