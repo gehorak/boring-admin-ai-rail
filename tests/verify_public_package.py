@@ -36,6 +36,11 @@ def validate_relative_path(value: object) -> str:
     return path.as_posix()
 
 
+def is_link_or_junction(path: Path) -> bool:
+    is_junction = getattr(path, "is_junction", None)
+    return path.is_symlink() or (callable(is_junction) and is_junction())
+
+
 def main() -> None:
     candidate_root = Path(__file__).resolve().parent.parent
     manifest_path = candidate_root / "PUBLIC-MANIFEST.json"
@@ -49,6 +54,15 @@ def main() -> None:
 
     if not isinstance(manifest, dict):
         fail("PUBLIC-MANIFEST.json must contain an object.")
+
+    linked_paths = sorted(
+        path.relative_to(candidate_root).as_posix()
+        for path in candidate_root.rglob("*")
+        if ".git" not in path.relative_to(candidate_root).parts
+        and is_link_or_junction(path)
+    )
+    if linked_paths:
+        fail(f"Public package contains symbolic links or junctions: {', '.join(linked_paths)}")
 
     files = manifest.get("distribution_files")
     control_files = manifest.get("repository_control_files")

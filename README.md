@@ -15,8 +15,8 @@ It provides a small foundation, neutral project templates, and an integrity
 check for this package. It is not a complete execution product, hosted
 service, or provider integration.
 
-Kit-Version: v0.1.2
-Template-Schema-Version: v0.3.0
+Kit-Version: v0.1.3
+Template-Schema-Version: v0.3.1
 
 Start with [QUICKSTART.md](./QUICKSTART.md). The stable foundation is in
 [DOCS/FOUNDATION.md](./DOCS/FOUNDATION.md), and the publication boundary is

@@ -2,16 +2,17 @@
 
 Project: <host-project-name>
 Component: project-layer-template
-Status: DRAFT
-Template-Schema-Version: v0.3.0
+Contract-Status: DRAFT
+Template-Schema-Version: v0.3.1
 Date: <YYYY-MM-DD>
 Review-Date: <YYYY-MM-DD>
+Owner: <human document owner>
 
 ## 1. Project Identity
 
 - repository: <name>
-- owner: <human decision owner>
-- status: <active / bootstrap / archived>
+- decision owner: <human decision owner>
+- project state: <active / bootstrap / archived>
 
 ## 2. Project Purpose
 
@@ -31,14 +32,20 @@ Summary:
 
 ## 5. Codebase Voice
 
-Canonical source: `./CODEBASE-VOICE.md`
+Canonical source when adopted: `./CODEBASE-VOICE.md`
+
+If this contract is not adopted, record `N/A` and keep the summary below
+within the active project contract.
 
 Summary:
 - <one or two project-level conventions>
 
 ## 6. Approved Integration Points
 
-Canonical source: `./INTEGRATION-POINTS.md`
+Canonical source when adopted: `./INTEGRATION-POINTS.md`
+
+If this contract is not adopted, record `N/A` and keep the summary below
+within the active project contract.
 
 Summary:
 - <one or two approved boundary categories>
@@ -53,8 +60,10 @@ Summary:
 
 ## 9. Selected Modules
 
-- <module-name>
-- <module-name>
+Use this optional section only for modules that the adopting project defines.
+This kit does not provide a module catalog or module ownership model.
+
+- <module-name | N/A>
 
 ## 10. Review Focus
 
@@ -63,6 +72,7 @@ Summary:
 ## 11. Contract Precedence
 
 - this document is the top-level index and project contract;
-- a specialized contract overrides its summary in this document;
+- an active specialized contract overrides its summary in this document when
+  that contract is adopted;
 - a disagreement between documents is a validation failure and must be resolved
   by the human decision owner before implementation.

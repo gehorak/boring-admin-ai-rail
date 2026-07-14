@@ -11,6 +11,6 @@ An adopting team must establish its own local rules, implementation controls,
 and evidence appropriate to its environment.
 
 `PUBLIC-MANIFEST.json` distinguishes `distribution_files`, whose hashes are
-verified as the adoption kit, from `repository_control_paths`, which are
+verified as the adoption kit, from `repository_control_files`, which are
 repository metadata needed to keep that verification running. Any file outside
 those declared sets is rejected by the integrity check.

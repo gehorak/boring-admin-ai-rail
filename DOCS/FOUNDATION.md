@@ -26,9 +26,19 @@ transition to `ACTIVE`, resolves exceptions and conflicts, and decides when a
 document must be reviewed or superseded. A `DRAFT` is a proposal, not an
 instruction to implement.
 
+`Contract-Status` names this document lifecycle. `Project-State` is a separate
+description of the host project, such as `bootstrap`, `active`, or `archived`;
+it does not make a contract normative.
+
 For a topic covered by a specialized contract, that specialized contract
 overrides the summary in `PROJECT.md`. A conflict is a validation failure and
 must be resolved before implementation.
+
+## Module boundary
+
+This kit does not prescribe a module catalog or module ownership model.
+`Selected Modules` in `PROJECT.md` is optional project-local context. Record
+`N/A` until the adopting project defines modules and their owners explicitly.
 
 ## Minimum safety boundary
 

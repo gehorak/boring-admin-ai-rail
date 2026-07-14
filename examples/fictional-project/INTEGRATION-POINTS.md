@@ -2,8 +2,8 @@
 
 Project: lantern-notes
 Component: integration-points-example
-Status: ACTIVE
-Template-Schema-Version: v0.3.0
+Contract-Status: ACTIVE
+Template-Schema-Version: v0.3.1
 Date: 2026-07-14
 Review-Date: 2026-10-14
 Owner: fictional product maintainer

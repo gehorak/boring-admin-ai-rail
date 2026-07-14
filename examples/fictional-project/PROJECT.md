@@ -2,8 +2,8 @@
 
 Project: lantern-notes
 Component: project-example
-Status: ACTIVE
-Template-Schema-Version: v0.3.0
+Contract-Status: ACTIVE
+Template-Schema-Version: v0.3.1
 Date: 2026-07-14
 Review-Date: 2026-10-14
 Owner: fictional product maintainer
@@ -15,8 +15,8 @@ implementation details.
 ## Project Identity
 
 - repository: `lantern-notes`
-- owner: product maintainer
-- status: bootstrap
+- decision owner: product maintainer
+- project state: bootstrap
 
 ## Project Purpose
 
@@ -31,20 +31,29 @@ project week.
 
 ## Architectural Canon
 
+Canonical source: `./ARCHITECTURE-CANON.md`
+
+Summary:
+
 - user-facing code calls the application layer through named use cases;
-- persistence is accessed through one documented storage boundary;
-- project documentation describes intent and boundaries, not credentials.
+- persistence is accessed through one documented storage boundary.
 
 ## Codebase Voice
 
-- naming: use explicit nouns for domain concepts and verbs for actions;
-- tests: cover each use case and its important failure path;
-- comments: explain constraints and decisions, not syntax.
+Canonical source when adopted: `./CODEBASE-VOICE.md`
+
+Summary:
+
+- naming uses explicit nouns for domain concepts and verbs for actions;
+- tests cover each use case and its important failure path.
 
 ## Approved Integration Points
 
-- note submission interface;
-- note review interface;
+Canonical source when adopted: `./INTEGRATION-POINTS.md`
+
+Summary:
+
+- note submission and review interfaces;
 - storage boundary.
 
 ## Do-Not-Touch Areas
@@ -58,10 +67,17 @@ project week.
 
 ## Selected Modules
 
-- development;
-- security.
+N/A. Lantern Notes has not defined a local module ownership model.
 
 ## Review Focus
 
 - accidental exposure of note content or credentials;
 - changes that bypass the storage boundary.
+
+## Contract Precedence
+
+- this document is the top-level index and project contract;
+- an active specialized contract overrides its summary when that contract is
+  adopted;
+- a disagreement between documents is a validation failure and must be
+  resolved by the human decision owner before implementation.

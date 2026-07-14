@@ -2,10 +2,11 @@
 
 Project: <host-project-name>
 Component: project-context-template
-Status: DRAFT
-Template-Schema-Version: v0.3.0
+Contract-Status: DRAFT
+Template-Schema-Version: v0.3.1
 Date: <YYYY-MM-DD>
 Review-Date: <YYYY-MM-DD>
+Owner: <human document owner>
 
 Purpose:
 - <business or technical purpose>

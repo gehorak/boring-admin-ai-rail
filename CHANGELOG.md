@@ -2,6 +2,17 @@
 
 All notable changes to this public adoption kit are recorded here.
 
+## v0.1.3
+
+### Changed
+
+- Clarified template ownership, contract lifecycle status, and project state as
+  separate fields in template schema v0.3.1.
+- Made optional specialized contracts explicitly conditional in `PROJECT.md`
+  and clarified that this kit does not prescribe a module catalog.
+- Rejected symbolic links and Windows junctions during package integrity
+  verification.
+
 ## v0.1.2
 
 ### Changed

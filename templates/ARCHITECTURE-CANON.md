@@ -2,10 +2,11 @@
 
 Project: <host-project-name>
 Component: architecture-canon-template
-Status: DRAFT
-Template-Schema-Version: v0.3.0
+Contract-Status: DRAFT
+Template-Schema-Version: v0.3.1
 Date: <YYYY-MM-DD>
 Review-Date: <YYYY-MM-DD>
+Owner: <human document owner>
 
 Canonical boundaries:
 - <boundary>

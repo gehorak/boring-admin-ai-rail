@@ -1,39 +1,39 @@
 {
   "profile": "anonymized_adoption_reference",
-  "kit_version": "v0.1.2",
-  "template_schema_version": "v0.3.0",
+  "kit_version": "v0.1.3",
+  "template_schema_version": "v0.3.1",
   "distribution_files": [
     {
       "path": "DOCS/FOUNDATION.md",
-      "sha256": "80b33066a546ed8f597f15436e26221803a3d25129d2a369ceaae0f2e712a239"
+      "sha256": "857cfb229868af4eca96598fa47e96f69d2f6d56be2ff7f087d0d28e6b1755c8"
     },
     {
       "path": "DOCS/PUBLIC-DISTRIBUTION.md",
-      "sha256": "7e8c1212d825d88db1f3f9dbeee77dbf29915987109ae179e2b78360616cc06c"
+      "sha256": "d07aba06886db73833f612f45572cb567e33c99a7934c3b79aabfe0a4e8e7a2e"
     },
     {
       "path": "examples/fictional-project/ARCHITECTURE-CANON.md",
-      "sha256": "807af5732e4ecfa1d5beb836b68208f78bcbc2d01398e4669950b921c11a5533"
+      "sha256": "27f08d88a771b011d3fa2a3d8a3cfcc72728f0acbbaf6d24edefa4b948dae52b"
     },
     {
       "path": "examples/fictional-project/CODEBASE-VOICE.md",
-      "sha256": "a6e7c34d75e08a828e974efe7b8de3bed636b5b08904d03481f70f0ecc87a086"
+      "sha256": "80a70df6b7341b55c23f82280c91e394442512e67f8e5269541f0b573a1ff115"
     },
     {
       "path": "examples/fictional-project/INTEGRATION-POINTS.md",
-      "sha256": "53b5aa1aecb832980a14ccad32693dcd821769320a96a02f1f6eb87e997c7685"
+      "sha256": "a113d80ff5f242776a46b6beb5ed8d277d2dffbbd2a476c09991ca992226bfd4"
     },
     {
       "path": "examples/fictional-project/PROJECT-CONTEXT.md",
-      "sha256": "dd87944cbf253caca399ed72dc8a9644356278f34a1eaa7f08085ddc4102a0f3"
+      "sha256": "87312d10db7a8cb984f0a29715a70245bed48c59c39ef71c92498ec823f8b760"
     },
     {
       "path": "examples/fictional-project/PROJECT.md",
-      "sha256": "9e13405350eff73523c57d1c8c8d4b5b812bb7dc17fd68db6360953cdf05e093"
+      "sha256": "1f57c43f5a8169fb5c65203284e1db463745b933dda732300f0d1f0ba9e4bca6"
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "20deb7b1ec44863a009159a039192c5000c4831f19682cecfe54d0e876f5ac93"
+      "sha256": "1a5f5640f6e78bbf6b254faf14d3482261e5624cfb68241e2a491962eea9800c"
     },
     {
       "path": "LICENSE",
@@ -45,39 +45,39 @@
     },
     {
       "path": "NOTICE.md",
-      "sha256": "299b32d9887371bd5dc0d220659b4561898f48cef2e5fe5ff1bc175efc23e819"
+      "sha256": "1a1a5e95d32cd777837526e6a92e733af5be999245388dfcfbc8aea27c533bdd"
     },
     {
       "path": "QUICKSTART.md",
-      "sha256": "fd5b2f1f2596a29011d850ae0b6e7eaa20f5fc42f691b90868ac1bec7b69308e"
+      "sha256": "12b1074ce649281de378ebf65c654953698dd2942d592788cf4367a3f58c408b"
     },
     {
       "path": "README.md",
-      "sha256": "359b47773f794ffcc4ebd65256d73dbb5f8189d4f5f6797804625d42d2c47f73"
+      "sha256": "c43fa45820476b567a989bcd00bb4338c346db29647f7c60804a0881bb5fad75"
     },
     {
       "path": "templates/ARCHITECTURE-CANON.md",
-      "sha256": "d14891e986e9ffdae0c9ca181fbb18f3b4d5a98f659e9e2db2af22083492db65"
+      "sha256": "67faf31ea86f6e5e8e2acf247e6ab0a00ee392faf706ebd3ebacb768a2190441"
     },
     {
       "path": "templates/CODEBASE-VOICE.md",
-      "sha256": "8449e0fbe7f9702d27e9b8640815786b1c3d0471692b0146a2781713db695055"
+      "sha256": "b5f08f745538dd70581c82ffd4afb07a0c6f5f44040e8e48a3fdfcc81e7b4545"
     },
     {
       "path": "templates/INTEGRATION-POINTS.md",
-      "sha256": "7de35f0ca59ac87b3d6e8856d330a353b1238a9a4d1fb255cdd8eef925a4f7f7"
+      "sha256": "3c4843af57dfe88e4a2b607d31001e3f55719b1cb3f07587634643b70919b296"
     },
     {
       "path": "templates/PROJECT-CONTEXT.md",
-      "sha256": "2d9b4a7a44780f1e940599611bded2450eeda25dc6156ab10b5bd1087804d5ce"
+      "sha256": "c38546420d58b151b1f617a75772e1b80bc404199b075c9e0db505cabc463515"
     },
     {
       "path": "templates/PROJECT.md",
-      "sha256": "0b961df2214da66f06a67339d90b002a7a981ba259920c685fd8d7151fc5e7a2"
+      "sha256": "467610685a387dd634818bdcbfefc4cf4016ad9b1795744b3cd505fad39c1599"
     },
     {
       "path": "tests/verify_public_package.py",
-      "sha256": "914ece2d826d6d5c6f381384ed0d2fa1afaae756e9b58871a7b04a9175d06812"
+      "sha256": "d1c0098d10ae6b2fa15c64e39af20264aa6f6314a68b53e67c1b09519a80b4cc"
     }
   ],
   "repository_control_files": [
