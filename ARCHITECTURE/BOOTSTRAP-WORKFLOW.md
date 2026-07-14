@@ -50,3 +50,7 @@ the presence of files.
 
 Repeat the affected steps when selected modules, ownership, architecture
 boundaries, or local exceptions materially change.
+
+The public rationale and a non-normative diagram are in
+[How the Rail Works](../DOCS/HOW-THE-RAIL-WORKS.md). The Czech first-pilot text
+is [PRVNI-PILOT.md](../DOCS/cs/PRVNI-PILOT.md).

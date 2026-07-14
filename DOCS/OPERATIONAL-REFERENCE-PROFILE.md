@@ -50,3 +50,7 @@ The included CLI checks portable contract invariants and derives only
 `UNPACKED`, `SEEDED`, `MAPPED`, `READY`, or `BLOCKED`. Any future runtime may
 consume these data contracts, but it must not redefine their documented
 authority or bootstrap rules.
+
+For adoption choices, see [Adoption Paths](./ADOPTION-PATHS.md). The public
+boundary and non-runtime claims are summarized in
+[Security Hardening](./SECURITY-HARDENING.md).

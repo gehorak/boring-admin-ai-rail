@@ -1,33 +1,43 @@
 # Česká veřejná dokumentační sada
 
-Tato sada je český vstup do veřejného Bootstrap-Complete profilu v0.2.2.
-Vysvětluje přenositelné kontrakty, offline validaci a hranice balíčku. Není
-interním provozním manuálem ani důkazem produkční bezpečnosti.
+Česká vstupní vrstva k veřejnému Bootstrap-Complete profilu v0.2.2. Vysvětluje
+proč AI Rail existuje, jak probíhá první pilot a kde končí veřejný balíček.
+České texty jsou popularizační; normativní názvy kontraktů a CLI zůstávají
+anglicky.
 
-## Pro koho je sada určena
+## Začni podle cíle
 
-- pro člověka, který framework dosud nezná;
-- pro developera nebo operátora při prvním pilotu;
-- pro reviewera, který ověřuje autoritu, scope a důkazy;
-- pro autora veřejné dokumentace, který odděluje přenositelné kontrakty od
-  interního know-how.
+- [Proč AI Rail](./PROC-AI-RAIL.md) — problém, který řeší, a co zůstává mimo
+  scope.
+- [Jak to funguje](./JAK-TO-FUNGUJE.md) — průchod od záměru přes `READY` až po
+  evidence.
+- [První pilot](./PRVNI-PILOT.md) — bezpečný tutorial na malém fiktivním
+  projektu.
+- [Příklad repozitáře](./PRIKLAD-REPOZITARE.md) — worked example s mapou modulů,
+  rozšířením scope a review.
+- [Pro koho je Rail](./PRO-KOHO-JE-RAIL.md) — role, adopční cesty a limity pro
+  solo ownera, tým i AI asistenta.
+- [Bezpečnostní hranice](./BEZPECNOSTNI-HRANICE.md) — co znamená strukturální
+  kontrola a co veřejný profil nedělá.
+- [Časté chyby a řešení](./CASTE-CHYBY-A-RESENI.md) — praktické nálezy při
+  prvním použití.
 
-## Doporučené pořadí čtení
+## Referenční navigace
 
-1. [Onboarding](./ONBOARDING.md) — pětiminutová orientace a první pilot;
-2. [FAQ](./FAQ.md) — hranice a časté omyly;
-3. [Slovník](./GLOSSARY.md) — české a anglické termíny;
-4. [Use cases](./USE-CASES.md) — modelované situace a adopční profily;
-5. [Traceability](./TRACEABILITY.md) — zdroje, důkazní kvalita a rozpory.
+- [Onboarding](./ONBOARDING.md) — krátká orientace před pilotem.
+- [FAQ](./FAQ.md) — odpovědi na hranice a adopční otázky.
+- [Slovník](./GLOSSARY.md) — česká vysvětlení při zachování contract names.
+- [Use cases](./USE-CASES.md) — modelované situace, ne produkční důkazy.
+- [Traceability](./TRACEABILITY.md) — tvrzení, zdroje, důkazní kvalita a
+  rozpory.
+- [Český rychlý start](../../QUICKSTART-CS.md) a
+  [anglický quickstart](../../QUICKSTART.md).
 
 ## Veřejná hranice
 
-Profil obsahuje dokumentaci, šablony, datové kontrakty a standard-library CLI.
+Profil obsahuje dokumentaci, šablony, JSON kontrakty a standard-library CLI.
 CLI ověřuje dodané dokumenty a data, ale nevolá model, neuděluje oprávnění,
 neověřuje lidskou identitu a nic nevykonává. Executor, provider adapter,
 sandbox, secrets, telemetry a model qualification runtime jsou mimo tento
-profil.
-
-Začni také [QUICKSTART.md](../../QUICKSTART.md),
-[BOOTSTRAP-COMPLETE.md](../BOOTSTRAP-COMPLETE.md) a hranicí
-[PUBLIC-DISTRIBUTION.md](../PUBLIC-DISTRIBUTION.md).
+profil. Úplný seznam je v [Security Hardening](../SECURITY-HARDENING.md) a
+[Documentation Matrix](../DOCUMENTATION-MATRIX.md).

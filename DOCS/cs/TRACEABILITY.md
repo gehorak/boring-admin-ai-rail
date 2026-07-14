@@ -1,16 +1,17 @@
 # Traceability a důkazní kvalita
 
-Tato mapa ukazuje, kde v profilu v0.2.2 ověřit hlavní tvrzení. Neuděluje
-schválení a nenahrazuje review host projektu.
+Traceability není jen seznam hashů. Pro jedno tvrzení musí být dohledatelné,
+odkud pochází, kdo o něm rozhodl, jak vznikl technický artefakt, co bylo
+ověřeno a zda došlo k externímu účinku. Tato mapa ukazuje, kde v profilu v0.2.2
+ověřit hlavní části řetězce; nenahrazuje review host projektu.
 
-| Tvrzení | Zdroj v exportu | Co zdroj dokládá | Co nedokládá |
+| Část řetězce | Příklad zdroje v exportu | Co lze doložit | Co zůstává na host projektu |
 |---|---|---|---|
-| Profil neprovádí práci | `DOCS/BOOTSTRAP-COMPLETE.md`, `DOCS/PUBLIC-DISTRIBUTION.md` | veřejnou hranici a CLI omezení | bezpečnost host projektu |
-| Dokumenty mají ownera, stav a review | `public_rail/documents.py`, `templates/operational/` | implementované kontroly a šablony | správnost vyplnění host projektu |
-| `READY` je odvozený stav | `public_rail/bootstrap.py`, `DOCS/BOOTSTRAP-COMPLETE.md` | podmínky stavu a invalidaci hashů | skutečnou připravenost týmu |
-| Scope a role se kontrolují | `public_rail/requests.py`, `schemas/request.schema.json` | strukturu scope, role a moduly | lidskou vhodnost rozhodnutí |
-| Evidence má pořadí a hash | `public_rail/evidence.py`, `schemas/evidence.schema.json` | kontrolované vazby a integritu artefaktů | pravdivost externího účinku |
-| Balíček je hashovaný | `tests/verify_public_package.py`, `PUBLIC-MANIFEST.json` | integritu deklarovaného exportu | významovou správnost dokumentů |
+| Origin / authority | `PROJECT.md`, `PROJECT-CONTEXT.md`, `ARCHITECTURE-CANON.md` | deklarovaný účel, hranice a autorita | zda dokument odpovídá realitě |
+| Human decision | `BOOTSTRAP-REVIEW.md`, authorization record | owner, rozhodnutí, scope a platnost | identitu a organizační oprávnění člověka |
+| Technical artifact | request/output/evidence JSON, cesta a hash | vazbu intentu, změny a review | kvalitu kódu, testy a skutečný diff |
+| Validation | `public_rail/bootstrap.py`, `requests.py`, `evidence.py` | strukturální konzistenci, pořadí a integrity | vhodnost rozhodnutí a provozní bezpečnost |
+| External effect | closure record a lokální provozní důkazy | že byl účinek popsán v řetězci | zda byl externí systém opravdu změněn bezpečně |
 
 ## Úrovně podpory
 
@@ -23,7 +24,8 @@ schválení a nenahrazuje review host projektu.
 
 Pokud se vysvětlující text liší od schématu, kódu nebo veřejné hranice,
 označ rozpor a aktualizuj ownera, FAQ, use case a tuto mapu. Historický nebo
-interní dokument není automaticky aktuální veřejná autorita.
+interní dokument není automaticky aktuální veřejná autorita. Hash dokládá
+integritu konkrétního obsahu, nikoli jeho pravdivost.
 
 ## Minimální důkaz pro pilot
 

@@ -1,39 +1,32 @@
 # Onboarding: první bezpečný pilot
 
-## Za pět minut
-
 Veřejný v0.2.2 profil dává host projektu koleje pro AI-assisted práci:
 explicitního lidského decision ownera, omezený scope, lokální kontrakty,
 bootstrap review a dohledatelnou evidenci. Je to reference a offline kontrola,
 ne automatická autorizace.
 
-## První pilot
+## Doporučené pořadí
 
-1. Spusť `python -m public_rail init --target docs/ai-rail`.
-2. Vyplň `WORKSPACE.json` a pět autoritativních dokumentů. Začni
-   `PROJECT.md`, potom doplň kontext, architekturu, codebase voice a integrační
-   body podle skutečné potřeby.
-3. Každý dokument drž ve strict front matter: typ, stav, schema verzi,
-   lidského ownera, datum review a konflikt `NONE`.
-4. V `PROJECT.md` explicitně uveď `Selected-Modules` a `Change-Surfaces`.
-   Každý aktivní surface musí mít právě jeden vlastnický modul.
-5. Spusť `validate`, oprav nálezy a proveď `freeze`. Bootstrap review smí
-   označit `READY` až po kontrole dokumentů, hashů, workspace a data platnosti.
-6. Teprve potom validuj request, output a evidence řetězec. Nic z toho samo
-   nespouští změnu.
+1. Přečti [Proč AI Rail](./PROC-AI-RAIL.md), aby byl jasný problém a hranice.
+2. Projdi [Jak to funguje](./JAK-TO-FUNGUJE.md), včetně stavů `UNPACKED` až
+   `READY`.
+3. Proveď [První pilot](./PRVNI-PILOT.md) na jednom malém, vratném úkolu.
+4. Při nejasnosti použij [FAQ](./FAQ.md) nebo
+   [Časté chyby a řešení](./CASTE-CHYBY-A-RESENI.md).
 
-## Kontrola před prací
+## Co musí být pravda před delivery
 
-Reviewer musí být schopen odpovědět:
+- `WORKSPACE.json` a pět autoritativních dokumentů odpovídá skutečnému host
+  projektu;
+- každý aktivní dokument má lidského ownera, platný review a `Document-Conflict:
+  NONE`;
+- `Selected-Modules` a `Change-Surfaces` jsou explicitní a každý surface má
+  právě jeden vlastnický modul;
+- `validate`, `status`, `freeze` a bootstrap review dávají konzistentní
+  výsledek `READY`;
+- request, output a evidence se vážou na jeden intent a stejný scope.
 
-- Kdo je lidský decision owner a kdo pouze reviewuje?
-- Co je v rozsahu, mimo rozsah a `do-not-touch`?
-- Který dokument a manifest jsou autoritativní?
-- Který modul vlastní každý aktivní change surface?
-- Jaké request, authorization, output a evidence artefakty se váží k jednomu
-  intentu?
-
-Pokud odpověď chybí, stav je `BLOCKED` nebo vyžaduje další bootstrap práci.
+Pokud něco chybí, stav je `BLOCKED` nebo je práce stále bootstrap přípravou.
 `DRAFT` není instrukce k implementaci a modelovaný příklad není schválení pro
 jiný projekt.
 
@@ -41,4 +34,5 @@ jiný projekt.
 
 CLI nedokazuje identitu člověka, produkční bezpečnost, kvalitu provideru ani
 správnost externího účinku. Tyto otázky vyžadují vlastní kontrolu a důkaz
-hostitelského projektu.
+hostitelského projektu. Další hranice shrnuje
+[Bezpečnostní hranice](./BEZPECNOSTNI-HRANICE.md).

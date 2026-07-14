@@ -23,3 +23,8 @@ and evidence appropriate to its environment.
 verified as the adoption kit, from `repository_control_files`, which are
 repository metadata needed to keep that verification running. Any file outside
 those declared sets is rejected by the integrity check.
+
+The public package is useful without an AI provider: begin with the
+[five-minute conceptual overview](./WHY-AI-RAIL.md), then follow the
+[quickstart](../QUICKSTART.md). The Czech navigation is in
+[DOCS/cs/README.md](./cs/README.md).

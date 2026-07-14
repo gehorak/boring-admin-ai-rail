@@ -32,3 +32,8 @@ The kit maintains documentation, data contracts, templates, the manifest, and
 its integrity check. Adopting projects remain responsible for their own
 runtime, security, access controls, testing, deployment, and release
 decisions.
+
+Documentation changes should keep the
+[documentation matrix](./DOCS/DOCUMENTATION-MATRIX.md) and
+`PUBLIC-MANIFEST.json` aligned. Changes to runtime behavior, schemas, or
+execution capabilities require a separate, explicitly scoped work item.

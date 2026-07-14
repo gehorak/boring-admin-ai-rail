@@ -19,3 +19,7 @@ copyright and permission notice remains with the work.
 
 This summary is descriptive only. The [LICENSE](./LICENSE) controls if this
 summary and the license differ.
+
+For the public profile's intended audience and limits, see
+[WHY-AI-RAIL.md](./DOCS/WHY-AI-RAIL.md) and the
+[Czech documentation hub](./DOCS/cs/README.md).

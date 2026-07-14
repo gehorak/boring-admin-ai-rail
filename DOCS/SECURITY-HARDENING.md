@@ -62,3 +62,8 @@ represented as implemented by this kit.
 The public manifest names separate version axes to avoid treating a base
 template revision, operational template revision, and JSON data-contract
 revision as one value. Compatibility claims must name the axis they rely on.
+
+This document describes the public structural boundary, not a hidden runtime
+design. For an accessible explanation of the same limit, see
+[Czech security boundaries](./cs/BEZPECNOSTNI-HRANICE.md) and
+[Why AI Rail](./WHY-AI-RAIL.md).

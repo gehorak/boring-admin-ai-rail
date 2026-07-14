@@ -29,3 +29,7 @@ bounded task. AI execution remains delegated assistance, not authority.
 - A role name is not a tool permission or execution capability.
 
 See `ROLES/` for the compact role cards used by this profile.
+
+The role table is a responsibility map, not a permission system. See
+[Adoption Paths](./ADOPTION-PATHS.md) for solo, team, and AI-assisted usage and
+[the Czech role guide](./cs/PRO-KOHO-JE-RAIL.md) for practical examples.

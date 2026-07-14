@@ -33,3 +33,7 @@ local document to silently reassign ownership.
 
 This is a reference map. It does not contain a runtime resolver, a request
 gate, or an automated enforcement mechanism.
+
+Use [Adoption Paths](../DOCS/ADOPTION-PATHS.md) to select only the modules
+needed by a host project; the [Czech example](../DOCS/cs/PRIKLAD-REPOZITARE.md)
+shows one fictional mapping.

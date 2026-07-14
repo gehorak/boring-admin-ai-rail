@@ -37,3 +37,7 @@ authorization reference, review result, and closure record. The optional
 
 This document does not authorize tools, external services, code execution, or
 automation. Those capabilities require separate implementation and controls.
+
+For the end-to-end state sequence, see
+[How the Rail Works](./DOCS/HOW-THE-RAIL-WORKS.md); for a command-oriented
+tutorial, see [QUICKSTART.md](./QUICKSTART.md).

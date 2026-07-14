@@ -92,6 +92,8 @@ All notable changes to this public adoption kit are recorded here.
 - A minimum adoption profile, completion criteria, contract lifecycle, and
   minimum safety boundary.
 - A descriptive practical license boundary and maintenance policy.
+- Popularization documentation in Czech, role-based adoption paths, and a
+  cross-language documentation matrix.
 
 ### Changed
 
@@ -101,6 +103,11 @@ All notable changes to this public adoption kit are recorded here.
   the kit version.
 - `PROJECT.md` is a top-level index; specialized contracts are canonical for
   their respective topics.
+- The English README and quickstart now explain a complete first pilot, while
+  the public boundary remains documentation-only and execution-free.
+
+This documentation round changes no runtime behavior, JSON schema meaning, or
+execution capability.
 
 ## v0.1.0
 

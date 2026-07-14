@@ -45,3 +45,8 @@ authority. The System Architect role is human-only. Structured scopes use
 segment-aware POSIX globs, reject traversal and invalid path characters, give
 deny rules priority, and reject symbolic links and Windows junctions in every
 existing parent component.
+
+## Related documentation
+
+Use [How the Rail Works](./HOW-THE-RAIL-WORKS.md) for the conceptual flow and
+[the Czech first-pilot guide](./cs/PRVNI-PILOT.md) for a worked walkthrough.
