@@ -37,7 +37,7 @@
     },
     {
       "path": "LICENSE",
-      "sha256": "88813d010a3eca7c063627832b9f39e600753b4105fe4aed192e52e1cf2dce04"
+      "sha256": "0be0cd1991c7ea89f0c1c7602b7be1a14ef0c889a9e5c91dd4023c80de740785"
     },
     {
       "path": "MAINTENANCE.md",
@@ -45,7 +45,7 @@
     },
     {
       "path": "NOTICE.md",
-      "sha256": "b5d5cbc8dd53a9f6fcfcdb51750897f8d5efe1d8c656aaf6c3241757b89decbd"
+      "sha256": "8043ee2cbcf970154880d13f2414f6f0e1907459c2f13cf75b69cc3e09a9410b"
     },
     {
       "path": "QUICKSTART.md",

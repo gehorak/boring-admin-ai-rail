@@ -13,14 +13,9 @@ only and does not alter that license.
 
 ## Practical license boundary
 
-The Additional Use Grant permits public forks and discussion, education,
-research, evaluation, internal training, and non-paid community sharing,
-subject to the full license terms.
+The MIT License permits use, copying, modification, publication,
+distribution, sublicensing, sale, and private or commercial use, provided the
+copyright and permission notice remains with the work.
 
-Separate written permission is required before offering the work or a
-derivative to third parties as a hosted, managed, subscription, paid
-training, paid consulting, paid implementation, OEM, embedded commercial, or
-support service.
-
-This summary is not legal advice. The [LICENSE](./LICENSE) controls if this
+This summary is descriptive only. The [LICENSE](./LICENSE) controls if this
 summary and the license differ.
