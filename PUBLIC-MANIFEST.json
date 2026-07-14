@@ -83,6 +83,6 @@
     {"path":"tests/verify_public_package.py","sha256":"b8bf933ed6269c657365be2a714db0f1f596b4c9b93981a2bfff964e7b23a1b5"}
   ],
   "repository_control_files": [
-    {"path":".github/workflows/verify-public-package.yml","sha256":"690f05a24add5fcbfc9846fcd73489f128ce575f2135f47db734fb8acb0c3e8d"}
+    {"path":".github/workflows/verify-public-package.yml","sha256":"92fda0816fed3e85ebc8daeb5d4998dbd68cda41a475f4d7979cfcf93e5aad7b"}
   ]
 }
