@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boring-admin-ai-rail"
+version = "0.3.0rc1"
+description = "Generated offline public reference distribution for BORING-ADMIN-AI-RAIL."
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE", "LICENSES/PUBLIC-SUBSET-MIT.md"]
+authors = [{ name = "gehorak" }]
+
+[project.scripts]
+boring-admin-ai-rail = "public_rail.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["public_rail*"]
+
+[tool.setuptools.package-data]
+public_rail = ["resources/schemas/*.json", "resources/templates/operational/*.md"]

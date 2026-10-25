@@ -3,57 +3,93 @@ name: verify-public-package
 on:
   pull_request:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
 
 jobs:
-  package-integrity:
+  public-package:
+    name: Public package (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os:
+          - ubuntu-24.04
+          - windows-2025
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+      - name: Checkout public distribution
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Restore manifest-bound checkout bytes
+        shell: pwsh
+        run: |
+          git config --local core.autocrlf false
+          git config --local core.eol lf
+          git checkout -- .
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
-      - run: python tests/verify_public_package.py
+      - name: Verify package integrity and complete inventory
+        shell: pwsh
+        run: python tests/verify_public_package.py
+      - name: Run public regression suite
+        shell: pwsh
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Build, install, and exercise the offline public wheel
+        shell: pwsh
+        run: |
+          $distributionDirectory = Join-Path $env:RUNNER_TEMP 'public-rail-distributions'
+          $virtualEnvironment = Join-Path $env:RUNNER_TEMP 'public-rail-wheel-venv'
+          New-Item -ItemType Directory -Path $distributionDirectory -Force | Out-Null
+          python -m pip install --disable-pip-version-check "setuptools>=61" "build==1.2.2.post1"
+          python -m build --wheel --sdist --outdir $distributionDirectory .
+          $wheel = Get-ChildItem -LiteralPath $distributionDirectory -Filter '*.whl' -File | Select-Object -First 1
+          if ($null -eq $wheel) { throw 'Public wheel build produced no wheel.' }
+          $sourceDistribution = Get-ChildItem -LiteralPath $distributionDirectory -Filter '*.tar.gz' -File | Select-Object -First 1
+          if ($null -eq $sourceDistribution) { throw 'Public build produced no source distribution.' }
+          $env:PUBLIC_WHEEL = $wheel.FullName
+          $env:PUBLIC_SDIST = $sourceDistribution.FullName
+          $artifactProbe = @'
+          import os
+          import tarfile
+          import zipfile
 
-  contract-tests:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
-        with:
-          python-version: "3.12"
-      - run: python -m unittest discover -s tests -p 'test_*.py' -v
-
-  examples:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
-        with:
-          python-version: "3.12"
-      - run: python -m unittest tests.test_public_rail.PublicRailTests.test_ready_is_derived_and_document_change_blocks_it -v
-
-  cli-smoke:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
-        with:
-          python-version: "3.12"
-      - run: python -m public_rail init --target .tmp-ai-rail
-      - run: python -m public_rail status --root .tmp-ai-rail
+          forbidden = ("internal" + "_rail", "PRIVATE-IP-DISCLOSURE-REVIEW", "PUBLICATION-DISCLOSURE-GATE", ".ai/")
+          with tarfile.open(os.environ["PUBLIC_SDIST"], "r:gz") as archive:
+              sdist_names = [member.name for member in archive.getmembers() if member.isfile()]
+          with zipfile.ZipFile(os.environ["PUBLIC_WHEEL"]) as archive:
+              wheel_names = archive.namelist()
+          for label, names in (("sdist", sdist_names), ("wheel", wheel_names)):
+              if any(marker in name for marker in forbidden for name in names):
+                  raise SystemExit(f"{label} contains a private export artifact")
+          if not any(name.endswith("public_rail/resources/schemas/request.schema.json") for name in sdist_names):
+              raise SystemExit("sdist is missing the public request schema")
+          if not any(name.endswith("/LICENSE") for name in sdist_names):
+              raise SystemExit("sdist is missing the MIT license")
+          if not any(name.endswith("public_rail/resources/schemas/request.schema.json") for name in wheel_names):
+              raise SystemExit("wheel is missing the public request schema")
+          if not any("licenses/" in name.lower() and name.endswith("LICENSE") for name in wheel_names):
+              raise SystemExit("wheel is missing MIT license metadata")
+          '@
+          python -c $artifactProbe
+          python -m venv $virtualEnvironment
+          $venvPython = if ($IsWindows) {
+            Join-Path $virtualEnvironment 'Scripts/python.exe'
+          }
+          else {
+            Join-Path $virtualEnvironment 'bin/python'
+          }
+          & $venvPython -m pip install --no-deps --no-build-isolation $sourceDistribution.FullName
+          & $venvPython -m pip install --no-deps $wheel.FullName
+          $probe = @'
+          import importlib.resources as resources
+          import public_rail
+          assert resources.files("public_rail").joinpath("resources/schemas/request.schema.json").is_file()
+          assert resources.files("public_rail").joinpath("resources/templates/operational/PROJECT.md").is_file()
+          '@
+          & $venvPython -c $probe
+          & $venvPython -m public_rail --help

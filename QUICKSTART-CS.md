@@ -1,17 +1,31 @@
-# Český rychlý start
+# Rychlý start pro veřejnou referenční distribuci
 
-Česká dokumentace pro veřejný profil v0.2.2 je v adresáři
-[`DOCS/cs/`](./DOCS/cs/README.md). Začni vysvětlením
-[Proč AI Rail](./DOCS/cs/PROC-AI-RAIL.md), pokračuj přes
-[Jak to funguje](./DOCS/cs/JAK-TO-FUNGUJE.md) a proveď
-[První pilot](./DOCS/cs/PRVNI-PILOT.md). Pro rozhodování podle role použij
-[Pro koho je Rail](./DOCS/cs/PRO-KOHO-JE-RAIL.md); pro nálezy
-[Časté chyby a řešení](./DOCS/cs/CASTE-CHYBY-A-RESENI.md).
+Tento balíček je veřejná, offline a neexekutující referenční distribuce
+BORING-ADMIN-AI-RAIL. Je generován z neveřejného kanonického zdroje. Neupravuj
+jej ručně a nepřenášej změny zpět do interního repozitáře.
 
-Referenční podklady jsou [FAQ](./DOCS/cs/FAQ.md),
-[slovník](./DOCS/cs/GLOSSARY.md), [use cases](./DOCS/cs/USE-CASES.md) a
-[traceability](./DOCS/cs/TRACEABILITY.md). Úplný anglický tutorial je v
-[QUICKSTART.md](./QUICKSTART.md).
+## Co balíček dělá
 
-Profil v0.2.2 je reference-only. `python -m public_rail` kontroluje dokumenty
-a data offline; nevolá model, neuděluje oprávnění a nic nevykonává.
+`public_rail` ověřuje strukturu předaných dokumentů, požadavků a důkazů podle
+zabalených schémat a šablon. Nevytváří schválení, nespouští nástroje, nevolá
+model ani síťovou službu. Výsledek `ALLOWED` je pouze výsledek lokální
+strukturální kontroly.
+
+## Lokální ověření
+
+```bash
+python -m pip install --no-deps .
+python -m public_rail --help
+python -m unittest discover -s tests -v
+python tests/verify_public_package.py
+```
+
+Tyto příkazy nevyžadují přístup ke kanonickému zdroji. Integritní kontrola
+ověřuje úplný povolený strom a SHA-256 každého souboru uvedeného v
+`PUBLIC-MANIFEST.json`.
+
+## Kde pokračovat
+
+Anglický přehled a odkazy jsou v [DOCS/INDEX.md](DOCS/INDEX.md). Pro hranice
+adopce a bezpečnosti si přečti [DOCS/ADOPTION.md](DOCS/ADOPTION.md) a
+[DOCS/SECURITY-BOUNDARY.md](DOCS/SECURITY-BOUNDARY.md).

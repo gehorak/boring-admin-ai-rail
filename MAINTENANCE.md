@@ -1,39 +1,16 @@
-# Maintenance Policy
+# Maintenance
 
-This repository is an adoption reference kit with an optional operational
-documentation profile. It does not provide a hosted service, implementation
-support, execution runtime, or a service-level commitment.
+The public repository is a generated distribution. Do not repair a public
+implementation or document directly. Make the correction in the maintained
+canonical source, update the versioned export classification, and generate a
+new candidate from an explicit immutable commit.
 
-## Change and release rules
+Before publication, run the export verifier, the public package verifier,
+public regression tests, a clean wheel build and installation check, and the
+public CLI smoke check. The corresponding public GitHub Actions workflow is
+also generated from the same internal source.
 
-- A change to the public package must keep `tests/verify_public_package.py`
-  passing and update `PUBLIC-MANIFEST.json` through the package build process.
-- Pull requests and changes to `main` run the public integrity workflow.
-- The Bootstrap-Complete test suite runs with
-  `python -m unittest discover -s tests -p 'test_*.py'` and uses only the
-  Python standard library.
-- Each published kit version records user-visible changes in `CHANGELOG.md`.
-- A release steward may create an immutable `vMAJOR.MINOR.PATCH` tag only after
-  the integrity workflow has passed for the intended `main` commit.
-
-## Versioning
-
-`Kit-Version` identifies the public distribution. The manifest carries three
-independent contract axes: `base_template_schema_version` for the compact
-adoption templates, `operational_template_schema_version` for the optional
-operational templates, and `contract_data_schema_version` for JSON contracts.
-`template_schema_version` remains the compatibility alias for the operational
-template axis. A change to one axis does not by itself imply a kit release or a
-change to another axis.
-
-## Maintenance boundary
-
-The kit maintains documentation, data contracts, templates, the manifest, and
-its integrity check. Adopting projects remain responsible for their own
-runtime, security, access controls, testing, deployment, and release
-decisions.
-
-Documentation changes should keep the
-[documentation matrix](./DOCS/DOCUMENTATION-MATRIX.md) and
-`PUBLIC-MANIFEST.json` aligned. Changes to runtime behavior, schemas, or
-execution capabilities require a separate, explicitly scoped work item.
+The public subset is MIT-licensed only within the explicit scope in
+`LICENSES/PUBLIC-SUBSET-MIT.md`. Changing its version, tag, release, or
+repository contents is a separate human decision and is not authorized by a
+successful export.
