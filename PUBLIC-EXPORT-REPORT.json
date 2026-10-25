@@ -25,8 +25,8 @@
       "status": "EXECUTED"
     }
   },
-  "distribution_version": "0.3.0rc1",
-  "export_configuration_sha256": "4909f90236c0b3ba15a884a49978c3e3571165e97315de32deaf2b8d5fd7aa19",
+  "distribution_version": "0.3.0",
+  "export_configuration_sha256": "69f8827ab320b1070e9b439261f3175f1a354fa16c29f18276f85e4bcbfa5aab",
   "file_count": 44,
   "files": [
     {
@@ -82,7 +82,7 @@
       "destination": "LICENSES/PUBLIC-SUBSET-MIT.md",
       "generated_by": null,
       "ip_classification": "PUBLIC_CONTRACT",
-      "sha256": "1b8956319f3923ab001a7e0ab4360cf355f63d1f964884b0ebbc667c56d93334",
+      "sha256": "11816af89cc3226bb7c992f3dc4814ba56aa56ba1c7c147b1bfc846b9048857f",
       "source": "public-export/v0.5.0/PUBLIC-SUBSET-MIT-EXCEPTION.md"
     },
     {
@@ -106,7 +106,7 @@
       "destination": "README.md",
       "generated_by": "readme",
       "ip_classification": "PUBLIC_REFERENCE",
-      "sha256": "e0168edcb9d99c1a58f575f83d7be61931e0bfad6e5162c5fd4c8dba9cfcff24",
+      "sha256": "43963719f92b9b3529b095e1974667fde928ed50a49216bd42e9c28091b542b6",
       "source": null
     },
     {
@@ -362,7 +362,7 @@
       "destination": "pyproject.toml",
       "generated_by": "pyproject",
       "ip_classification": "PUBLIC_CONTRACT",
-      "sha256": "9eabf005ff99d708f41562074c6356cd59b13bf7943d5fbed7b6faccc73428e8",
+      "sha256": "ca8968dc8b92861d9ab166701f04112c97ec34f5b0128564ac0423572a3aa0f7",
       "source": null
     },
     {
@@ -383,7 +383,7 @@
     }
   ],
   "license": "MIT",
-  "manifest_id": "boring-admin-ai-rail-public-v0.3.0rc1-from-internal-v0.5.0",
+  "manifest_id": "boring-admin-ai-rail-public-v0.3.0-from-internal-v0.5.0",
   "public_api_version": "0.2.2",
   "public_repository": "gehorak/boring-admin-ai-rail",
   "publication_readiness": {
@@ -394,10 +394,10 @@
   "result": "EXPORTED",
   "schema_version": "public-export-report/v2",
   "source_baseline_commit": "ae658093cebf9c51f39d170940fdfe07d3c50080",
-  "source_commit": "10d3f2e77dc36049621ddb05b870858818f184cd",
+  "source_commit": "9e9315c8cf3c8f69f939e1c1c60b5e340aa1c6e1",
   "source_identity": {
     "approved_source_status": "HOLD",
-    "candidate_source_sha": "10d3f2e77dc36049621ddb05b870858818f184cd",
+    "candidate_source_sha": "9e9315c8cf3c8f69f939e1c1c60b5e340aa1c6e1",
     "ci_integration_sha": null,
     "internal_baseline_commit": "ae658093cebf9c51f39d170940fdfe07d3c50080",
     "internal_baseline_tag": "v0.5.0",

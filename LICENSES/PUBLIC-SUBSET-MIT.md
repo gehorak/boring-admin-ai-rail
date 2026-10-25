@@ -1,6 +1,6 @@
 # MIT licensing declaration for the public subset
 
-Effective scope: `boring-admin-ai-rail-public` distribution `0.3.0rc1` and
+Effective scope: `boring-admin-ai-rail-public` distribution `0.3.0` and
 only the files enumerated in its generated `PUBLIC-MANIFEST.json`.
 
 Licensor and rights holder: gehorak, for the approved original components in
