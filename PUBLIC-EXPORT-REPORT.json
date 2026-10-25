@@ -1,0 +1,407 @@
+{
+  "checks": {
+    "baseline_identity": {
+      "scope": "Baseline tag-to-commit and selected-commit ancestry.",
+      "status": "EXECUTED"
+    },
+    "candidate_tree_byte_identity": {
+      "scope": "Executed after report generation by export verification and the standalone public verifier.",
+      "status": "NOT_EXECUTED"
+    },
+    "classified_source_boundary": {
+      "scope": "Allowed paths, Git blob types, sensitive markers, and private runtime dependency exclusion.",
+      "status": "EXECUTED"
+    },
+    "executing_exporter_identity": {
+      "scope": "Running exporter bytes compared with the selected commit.",
+      "status": "EXECUTED"
+    },
+    "ip_inventory_coverage": {
+      "scope": "Private review coverage for every classified file and generated public attestation.",
+      "status": "EXECUTED"
+    },
+    "license_eligibility": {
+      "scope": "Internal BUSL and canonical public MIT license and exception bytes compared with classified digests.",
+      "status": "EXECUTED"
+    }
+  },
+  "distribution_version": "0.3.0rc1",
+  "export_configuration_sha256": "4909f90236c0b3ba15a884a49978c3e3571165e97315de32deaf2b8d5fd7aa19",
+  "file_count": 44,
+  "files": [
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "destination": ".github/workflows/verify-public-package.yml",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "89e4200121b8afba2d1520db637536a4f5a569882cb884f4a7d5a3994e846a03",
+      "source": "public-export/v0.5.0/public-ci/verify-public-package.yml"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "CHANGELOG.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "a184ee5915263d36a8307032fef69a55009cd99f3ceba15e1c3ca424c4a9f30e",
+      "source": "public-export/v0.5.0/docs/CHANGELOG.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "DOCS/ADOPTION.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "b642ac284d6f47e622ec39ece55e06b87a049c7e640cd3a6358430926b73bd05",
+      "source": "public-export/v0.5.0/docs/ADOPTION.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "DOCS/INDEX.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "f884777dbb8b4cdedabdb7357096d5c21fbb01e7dea48a78077cbc0a2ce7a7df",
+      "source": "public-export/v0.5.0/docs/INDEX.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "DOCS/SECURITY-BOUNDARY.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "b33d5cf1db95e5053678d9191557d1fea10355fb5647b237caed0b9faf020b56",
+      "source": "public-export/v0.5.0/docs/SECURITY-BOUNDARY.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "LICENSE",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "0be0cd1991c7ea89f0c1c7602b7be1a14ef0c889a9e5c91dd4023c80de740785",
+      "source": "public-export/v0.5.0/LICENSE-MIT"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "LICENSES/PUBLIC-SUBSET-MIT.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "1b8956319f3923ab001a7e0ab4360cf355f63d1f964884b0ebbc667c56d93334",
+      "source": "public-export/v0.5.0/PUBLIC-SUBSET-MIT-EXCEPTION.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "MAINTENANCE.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "c3da88508dadd49505e9ad428378327178d79fd1d6e506340f11986554840fd1",
+      "source": "public-export/v0.5.0/docs/MAINTENANCE.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "destination": "QUICKSTART-CS.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "7cda324efcfa7b94259d1ae38423ca4d629731e2ea6b81a9227f3fdbd1a6bfc4",
+      "source": "public-export/v0.5.0/docs/QUICKSTART-CS.md"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "destination": "README.md",
+      "generated_by": "readme",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "595775431da652bfc81582585b72099d888c3f9a1a845bb4d516e8f126261c9a",
+      "source": null
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/__init__.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "ad5d1e277642ee8d18f5bdd6da3be9721cc8079beddeb0900b3bc66f3329a68d",
+      "source": "public_rail/__init__.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/__main__.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "source": "public_rail/__main__.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/authorization.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "73f1ec01ab59ea7bb6386cedeab09ee810b5fa0cdf605b3fb42985ad4e6ffa1c",
+      "source": "public_rail/authorization.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/bootstrap.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "27057354653aa3c22dec1af83419c514d849641946051ba77ede2d71cf0036c6",
+      "source": "public_rail/bootstrap.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/cli.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "6f0db0772b5bb11958d54254ca42b5b9f445c4192f81caee456e2936f1fb24ff",
+      "source": "public_rail/cli.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/documents.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "0afaa7d85313fa008ff599c6d43a25c46d55fe80441ea0326aabf6e65bf6b098",
+      "source": "public_rail/documents.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/evidence.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "f5321487bc970961ea1c313dcd4bb6b54e9054354225fec3b7297fe820e79b19",
+      "source": "public_rail/evidence.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/frontmatter.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "35deb03ed92ec15cbcb47911575f7ab599ccab0c066e47678e3d511244225981",
+      "source": "public_rail/frontmatter.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/paths.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "88679e23e6c3c9624555cdb50dc980ac6adfc327902521940510008275f415f6",
+      "source": "public_rail/paths.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/qualification.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "146f98b9d6daa54d525cdd64ef896762135247f4027ca4b31499dbe499b948f0",
+      "source": "public_rail/qualification.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/requests.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "d95d1cde715f779ad1fc3007cd458eae784f83062ef39a3be32ecd692cc98cb9",
+      "source": "public_rail/requests.py"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/authorization.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "f2efa95a467b268b8f3904381f85bfe698a452dcf9d1e8a180446a5c9c06a3aa",
+      "source": "public_rail/resources/schemas/authorization.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/bootstrap-manifest.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "8f61fb30e9908a08753c707845ac601be159da7c9ae858234090877feccf43f7",
+      "source": "public_rail/resources/schemas/bootstrap-manifest.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/bootstrap-review.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "dea7009e56a1db4e8c2e2dd169ae900c784576c4608407f56f83f1e2a5e4640e",
+      "source": "public_rail/resources/schemas/bootstrap-review.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/closure.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "4c2eedfe876ad905a9a0c4dd6e800884448d2505cf4750ed2457520a234e4da9",
+      "source": "public_rail/resources/schemas/closure.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/evidence.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "61634e2c7e42ab86528811d485b62d863b3b12109923b25599d873e12286b0e8",
+      "source": "public_rail/resources/schemas/evidence.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/intent.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "d8b257e22fc10604f42cee2e32718af654a9a1708ed63054301a80166aaa128c",
+      "source": "public_rail/resources/schemas/intent.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/model-evaluation.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "3049290dadc68ecd456dd226f459cb292ec9cc57e772b957fb5d3364b8c50cab",
+      "source": "public_rail/resources/schemas/model-evaluation.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/model-registry.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "17470191e45c744ccbe6b55864a5dcfd510f49a0dd4d71b88c0c891389d7b6e3",
+      "source": "public_rail/resources/schemas/model-registry.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/output.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "7a009fb4af199c9ecf81cee486c5cf40890085c75eb00fc60bf4de68a5b71284",
+      "source": "public_rail/resources/schemas/output.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/request.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "ffe3055e813bc75e70a474e8afebbb6fd71a35634656ba166845011024b87ecd",
+      "source": "public_rail/resources/schemas/request.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/review-result.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "d992b144047c38ce9c509217ba0d800f2ad8ce3596156189d444a23050450404",
+      "source": "public_rail/resources/schemas/review-result.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/schemas/workspace-binding.schema.json",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "bc177da9ae9e186fcf1118b9daba40721c7cf3cb2d791b38173a5ccef2482c02",
+      "source": "public_rail/resources/schemas/workspace-binding.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/templates/operational/ARCHITECTURE-CANON.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "2e811067e3654a0ee2526eb27959cf0083ef802362e5d84d9b0ac9328c730af1",
+      "source": "public_rail/resources/templates/operational/ARCHITECTURE-CANON.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/templates/operational/BOOTSTRAP-REVIEW.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "18679bf43c6a0aea0ba2e0d33f0303a8aa8b63e013350936598c41243b952379",
+      "source": "public_rail/resources/templates/operational/BOOTSTRAP-REVIEW.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/templates/operational/CODEBASE-VOICE.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "8ea0f29fed988fb31c884b7a37470e52dc465b94da55bbb3c232068da525e799",
+      "source": "public_rail/resources/templates/operational/CODEBASE-VOICE.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/templates/operational/INTEGRATION-POINTS.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "42934824a2b5a00b81af55c8d0793cbff9c909292710969a39d048536faaab55",
+      "source": "public_rail/resources/templates/operational/INTEGRATION-POINTS.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/templates/operational/PROJECT-CONTEXT.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "1de8299494b8be9fd749adc8f1b130eb15aff466339dd1c29e8247baa6d1e202",
+      "source": "public_rail/resources/templates/operational/PROJECT-CONTEXT.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "destination": "public_rail/resources/templates/operational/PROJECT.md",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "b560cc4407364913cea736b4264cb53e8e2ef9bd082d96bdce2287dcc92e65a0",
+      "source": "public_rail/resources/templates/operational/PROJECT.md"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/results.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "bd865cd4d6a23fe36f1ad478b4bad017ee8bdd3b6c2c06d4526f376776239d26",
+      "source": "public_rail/results.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "destination": "public_rail/schema.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "93033f9b89f43aa270a408f6981279fe82502413554f503f2c1d9660090df175",
+      "source": "public_rail/schema.py"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "destination": "pyproject.toml",
+      "generated_by": "pyproject",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "9eabf005ff99d708f41562074c6356cd59b13bf7943d5fbed7b6faccc73428e8",
+      "source": null
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "destination": "tests/test_public_rail.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_REFERENCE",
+      "sha256": "21b430ce244f600bd3802f25415080794a580b42f8cb19377da547800819428f",
+      "source": "tests/python/test_public_rail.py"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "destination": "tests/verify_public_package.py",
+      "generated_by": null,
+      "ip_classification": "PUBLIC_CONTRACT",
+      "sha256": "16bf0ecac91e9717d0d3c7fa27fbbe978146886e21f66757af7a2a916222dc1c",
+      "source": "public-export/v0.5.0/public-ci/verify_public_package.py"
+    }
+  ],
+  "license": "MIT",
+  "manifest_id": "boring-admin-ai-rail-public-v0.3.0rc1-from-internal-v0.5.0",
+  "public_api_version": "0.2.2",
+  "public_repository": "gehorak/boring-admin-ai-rail",
+  "publication_readiness": {
+    "automatic_approval": false,
+    "scope": "A technically verified candidate is not publication-approved without separately stored, verified human disclosure approval evidence.",
+    "state": "HOLD"
+  },
+  "result": "EXPORTED",
+  "schema_version": "public-export-report/v2",
+  "source_baseline_commit": "ae658093cebf9c51f39d170940fdfe07d3c50080",
+  "source_commit": "6284f7af9cbde0aba6318f984e9bd75895f9f1c9",
+  "source_identity": {
+    "approved_source_status": "HOLD",
+    "candidate_source_sha": "6284f7af9cbde0aba6318f984e9bd75895f9f1c9",
+    "ci_integration_sha": null,
+    "internal_baseline_commit": "ae658093cebf9c51f39d170940fdfe07d3c50080",
+    "internal_baseline_tag": "v0.5.0",
+    "pr_head_sha": null
+  },
+  "source_tag": "v0.5.0"
+}
