@@ -4,21 +4,25 @@ from __future__ import annotations
 
 import copy
 import json
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
+from importlib.resources import files
 from pathlib import Path
 from unittest.mock import patch
 
 from public_rail.authorization import scope_hash
 from public_rail.bootstrap import MAX_JSON_BYTES, freeze, load_json, status
-from public_rail.cli import init, main
+from public_rail.cli import TEMPLATE_NAMES, init, main
 from public_rail.documents import AUTHORITATIVE_DOCUMENTS, DOCUMENT_TYPES, sha256
 from public_rail.evidence import validate_evidence
 from public_rail.frontmatter import parse
 from public_rail.paths import PathError, glob_match, in_scope, is_link_or_junction, resolve_below
 from public_rail.qualification import QUALIFICATION_CATEGORIES
 from public_rail.requests import validate_output, validate_request
-from public_rail.schema import unsupported_keywords
+from public_rail.schema import SCHEMA_NAMES, unsupported_keywords
 
 
 class PublicRailTests(unittest.TestCase):
@@ -123,6 +127,56 @@ class PublicRailTests(unittest.TestCase):
         self.assertEqual("UNPACKED", status(root).result)
         self.assertEqual("BLOCKED", init(root, False).result)
 
+    def test_init_force_does_not_follow_a_destination_symlink(self) -> None:
+        root = self.root()
+        root.mkdir(parents=True)
+        outside = root.parent / "outside-project.md"
+        outside.write_text("must remain unchanged", encoding="utf-8")
+        destination = root / "PROJECT.md"
+        try:
+            destination.symlink_to(outside)
+        except OSError as exc:
+            self.skipTest(f"Symlink creation is unavailable: {exc}")
+
+        result = init(root, True)
+
+        self.assertEqual("BLOCKED", result.result)
+        self.assertEqual("must remain unchanged", outside.read_text(encoding="utf-8"))
+        self.assertFalse((root / "PROJECT-CONTEXT.md").exists())
+
+    @unittest.skipUnless(sys.platform == "win32", "Windows junction coverage")
+    def test_init_force_does_not_follow_a_target_junction(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            parent = Path(temporary)
+            outside = parent / "outside"
+            outside.mkdir()
+            sentinel = outside / "PROJECT.md"
+            sentinel.write_text("must remain unchanged", encoding="utf-8")
+            target = parent / "target"
+            powershell = shutil.which("pwsh")
+            if powershell is None:
+                self.skipTest("PowerShell is unavailable for Windows junction coverage")
+            junction = subprocess.run(
+                [
+                    powershell, "-NoProfile", "-NonInteractive", "-Command",
+                    "& { param($link, $destination) New-Item -ItemType Junction -Path $link -Target $destination -ErrorAction Stop | Out-Null }",
+                    str(target), str(outside),
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+            if junction.returncode != 0:
+                self.skipTest(f"Junction creation is unavailable: {junction.stderr or junction.stdout}")
+            self.assertTrue(target.is_junction(), "Junction fixture was not created")
+            try:
+                result = init(target, True)
+                self.assertEqual("BLOCKED", result.result)
+                self.assertEqual("must remain unchanged", sentinel.read_text(encoding="utf-8"))
+            finally:
+                if target.exists() or target.is_symlink():
+                    target.rmdir()
+
     def test_request_is_blocked_before_bootstrap_is_ready(self) -> None:
         root = self.root()
         self.assertEqual(0, init(root, False).execution_capability)
@@ -156,9 +210,10 @@ class PublicRailTests(unittest.TestCase):
         self.assertEqual("BLOCKED", status(root).result)
 
     def test_operational_templates_allow_body_labels(self) -> None:
-        template_root = Path(__file__).resolve().parent.parent / "templates" / "operational"
-        for path in template_root.glob("*.md"):
-            with self.subTest(path=path.name):
+        template_root = files("public_rail").joinpath("resources", "templates", "operational")
+        for name in TEMPLATE_NAMES:
+            path = template_root.joinpath(name)
+            with self.subTest(path=name):
                 document = parse(path.read_text(encoding="utf-8"))
                 self.assertEqual("DRAFT", document.metadata["Contract-Status"])
 
@@ -426,8 +481,9 @@ class PublicRailTests(unittest.TestCase):
         self.assertEqual("BLOCKED", validate_evidence(root, evidence_path).result)
 
     def test_public_schemas_are_strict_with_extensions_only(self) -> None:
-        schema_root = Path(__file__).resolve().parent.parent / "schemas"
-        for path in schema_root.glob("*.schema.json"):
+        schema_root = files("public_rail").joinpath("resources", "schemas")
+        for name in SCHEMA_NAMES:
+            path = schema_root.joinpath(f"{name}.schema.json")
             schema = json.loads(path.read_text(encoding="utf-8"))
             self.assertFalse(schema["additionalProperties"], path.name)
             self.assertIn("extensions", schema["properties"], path.name)

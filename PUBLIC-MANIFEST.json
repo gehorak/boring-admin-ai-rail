@@ -1,100 +1,382 @@
 {
-  "profile": "bootstrap_complete_public_profile",
-  "kit_version": "v0.2.2",
-  "template_schema_version": "v0.5.0",
-  "base_template_schema_version": "v0.4.1",
-  "operational_template_schema_version": "v0.5.0",
-  "contract_data_schema_version": "v0.5.0",
-  "distribution_files": [
-    {"path":".gitattributes","sha256":"5770cbb52725240d92321110e99d157c0c93b752536d37c4ce1838203c992683"},
-    {"path":"ARCHITECTURE/BOOTSTRAP-WORKFLOW.md","sha256":"df142044a5adb2fdac1c48d08773dddadacd5fb86269dd1cf4f0130e3483355c"},
-    {"path":"ARCHITECTURE/MODULE-COMPOSITION.md","sha256":"9467301f69b48ebee9fd2bc48864d6513625b5be67b3b3c06920f8a61562781d"},
-    {"path":"CHANGELOG.md","sha256":"7ef1217c53617580a34d8126ff24aebdacd871c2279e7b137e0d26576df3e7bc"},
-    {"path":"DOCS/ADOPTION-PATHS.md","sha256":"92597a222ba3860949e3976c06d2b2417e54c4ec706c66a0419832189c028d13"},
-    {"path":"DOCS/BOOTSTRAP-COMPLETE.md","sha256":"b7956f06699191527be15f5c1be2a363f0d3a3b92f6e5e665abab60c20aca1c6"},
-    {"path":"DOCS/DOCUMENTATION-MATRIX.md","sha256":"9c9f8858121c64c1cb587f6a755b8e775f2b1aac9be1914d6186cbbeb3ad6332"},
-    {"path":"DOCS/HOW-THE-RAIL-WORKS.md","sha256":"d5171e2415e1f557d8d1ee0e85fc5b55400340b93f553e3bfb81f10ef1315bd2"},
-    {"path":"DOCS/cs/BEZPECNOSTNI-HRANICE.md","sha256":"41d3bc92efd61866338d9eb1882e2d911f6d0b3dc26ee2fc443993fcbe44712e"},
-    {"path":"DOCS/cs/CASTE-CHYBY-A-RESENI.md","sha256":"f9a9423e66868f841132b9e326427dc52690775491c5258d07432872f0c173bc"},
-    {"path":"DOCS/cs/FAQ.md","sha256":"bdfd774ad1fa9f9514eda0c445914c870a7e721856b0a94760437b220cf3816f"},
-    {"path":"DOCS/cs/GLOSSARY.md","sha256":"74613a6aa8d189162824c8d3b86bed7f9e2c49d6941a22651e0d7b7266a901fe"},
-    {"path":"DOCS/cs/JAK-TO-FUNGUJE.md","sha256":"d48f66617ed3b141a93950e0ac3b5377268933d8b09f1416b427436b242a660d"},
-    {"path":"DOCS/cs/ONBOARDING.md","sha256":"c703a3d70331b4513b2795138518cede72223d8b9e281508e3259f6ee50ba0e1"},
-    {"path":"DOCS/cs/PRIKLAD-REPOZITARE.md","sha256":"5df5890ecc4aa340ff03e8e2323b52cddc58e61d1326f60831bb693814393898"},
-    {"path":"DOCS/cs/PRO-KOHO-JE-RAIL.md","sha256":"da0055138f999f7f06fb8f08eefcf77d0a254128fb6a3290fdb312cee812ce94"},
-    {"path":"DOCS/cs/PROC-AI-RAIL.md","sha256":"ba7f18622bca669e52c76bd06bedacac74ae003e0101e7c1599f10ff899fdf80"},
-    {"path":"DOCS/cs/PRVNI-PILOT.md","sha256":"cae100a2c8d9ff333255fad24d81f6fe16cdb1721cbda19f06b85e0fa806bc18"},
-    {"path":"DOCS/cs/README.md","sha256":"f962694fa96c3820b9d48423524a6237430c9af088e763935ed07ace0de30e1c"},
-    {"path":"DOCS/cs/TRACEABILITY.md","sha256":"999a005b9b60a5fe6a6288f1ed9cdb319f0cfc94d90a8cb47faf9296496de9e8"},
-    {"path":"DOCS/cs/USE-CASES.md","sha256":"8c6b20cf2651df1cc6730757f74f650053716ec937f90132b2670e0d40c04f59"},
-    {"path":"DOCS/FOUNDATION.md","sha256":"857cfb229868af4eca96598fa47e96f69d2f6d56be2ff7f087d0d28e6b1755c8"},
-    {"path":"DOCS/MINIMUM-HOST-REPO-ASSEMBLY.md","sha256":"4e51729f13db03a54d269b4e8e86c03404421118dfabbcda43a1f995714ebd09"},
-    {"path":"DOCS/OPERATIONAL-REFERENCE-PROFILE.md","sha256":"8150c2eba14b58e39f2f78cf9bba59470a2fb8fc2be5c6ce22f151e6f84697f6"},
-    {"path":"DOCS/PUBLIC-DISTRIBUTION.md","sha256":"1657ecf1d845fab4e1f0dae50393f10c20561737067830fa50e2abeab0b98ba4"},
-    {"path":"DOCS/ROLE-MODEL.md","sha256":"2b207d64d811d8ed142c4608f8e63cdc0ee729cb257199e0f8e1a93c08d2db86"},
-    {"path":"DOCS/SECURITY-HARDENING.md","sha256":"ad50714e684dd9b41edbaa638533245b3f944549654e34ccc0bf66ad16207f2a"},
-    {"path":"LICENSE","sha256":"0be0cd1991c7ea89f0c1c7602b7be1a14ef0c889a9e5c91dd4023c80de740785"},
-    {"path":"MAINTENANCE.md","sha256":"3346aef0755c43c54206b792c77b2590bf35e526106ed3672233943133734215"},
-    {"path":"NOTICE.md","sha256":"1d37afad7239baaa1724ad698af82be33ac5a554c4dab1750171d39c4526079c"},
-    {"path":"QUICKSTART-CS.md","sha256":"7e1fbeed8d7318517fc8f3f3dbf50a6a3bc3ea09db6afe3e5f47b2e193bca97a"},
-    {"path":"QUICKSTART.md","sha256":"8e1e268882c7e6a52e56748e007ccfd231d6a468df7d06986b9023db73ba5125"},
-    {"path":"README.md","sha256":"24e8f47c1190af47c5e37194bde72adf1fca2deaee8bc78c24ecb29f499376f0"},
-    {"path":"ROLES/20-system-architect.md","sha256":"8ce1486d2d8316f5521dff8013c90ed9672f2ce5d0e82c75c435a1aacc99830e"},
-    {"path":"ROLES/30-architect-ai.md","sha256":"b54b89f8ff79ec180521e1b5283a0de4fb1354f7be5377f8dd67cc783a774741"},
-    {"path":"ROLES/40-senior-developer.md","sha256":"8d99d0ac7f7820ce9d5a7dbee6171e7f6bdfeb329fefd3ea7f8a4b7bfdfa480c"},
-    {"path":"ROLES/70-reviewer-auditor.md","sha256":"fdb40e6730071ee1cd419ad9a9549af4d9b62edd8e343ff5e8819f00cb1eca1a"},
-    {"path":"WORKFLOW.md","sha256":"b5e917807f35df78d996f65197e805629ea67a7894c4160371ea675af4d44baa"},
-    {"path":"DOCS/WHY-AI-RAIL.md","sha256":"7d677f8c49bfb3d673259222865eacecf1e7aebecd92971cc2b42cd48ab6e6d5"},
-    {"path":"examples/fictional-blocked/README.md","sha256":"bf0004477f3b236b75f1d6edf7448570b20af2bde1daf5926687a30eec74837b"},
-    {"path":"examples/fictional-ready/README.md","sha256":"f4678589fed163e9b8de40779eab56b4c5492a199b53009b926dcaa3832cb06c"},
-    {"path":"examples/fictional-unpacked/README.md","sha256":"5cebd205a49d7d2ef971015362f7f6bc8209b75ae9c826e85fa44a7414c5c9e9"},
-    {"path":"examples/fictional-project/ARCHITECTURE-CANON.md","sha256":"43280fa630eb31866eb5167f64bbf680139e03f2b723d111a2aad5a0de2682df"},
-    {"path":"examples/fictional-project/CODEBASE-VOICE.md","sha256":"039133c2827d611be52064db233ee37395f0f3f0cf64b7afa2046eedcc0e6971"},
-    {"path":"examples/fictional-project/INTEGRATION-POINTS.md","sha256":"d54126d26032ea43af906e3468dc24a834c34311c6c3324a3828eff0944d34a8"},
-    {"path":"examples/fictional-project/PROJECT-CONTEXT.md","sha256":"9c8ce29b0ff57363dac57233e8c27f3e3b483f4ced70931ddfdc5563daa867dd"},
-    {"path":"examples/fictional-project/PROJECT.md","sha256":"2ed12a72808e9eae1ae36941975768ac81a3e74e8ce9f2343ce3835616f666df"},
-    {"path":"public_rail/__init__.py","sha256":"ad5d1e277642ee8d18f5bdd6da3be9721cc8079beddeb0900b3bc66f3329a68d"},
-    {"path":"public_rail/__main__.py","sha256":"935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"},
-    {"path":"public_rail/authorization.py","sha256":"73f1ec01ab59ea7bb6386cedeab09ee810b5fa0cdf605b3fb42985ad4e6ffa1c"},
-    {"path":"public_rail/bootstrap.py","sha256":"27057354653aa3c22dec1af83419c514d849641946051ba77ede2d71cf0036c6"},
-    {"path":"public_rail/cli.py","sha256":"4fa91ccde41acffe362c41681e50cbe1752dd2be4cdc1d2fcc505a27fe8404c0"},
-    {"path":"public_rail/documents.py","sha256":"0afaa7d85313fa008ff599c6d43a25c46d55fe80441ea0326aabf6e65bf6b098"},
-    {"path":"public_rail/evidence.py","sha256":"f5321487bc970961ea1c313dcd4bb6b54e9054354225fec3b7297fe820e79b19"},
-    {"path":"public_rail/frontmatter.py","sha256":"35deb03ed92ec15cbcb47911575f7ab599ccab0c066e47678e3d511244225981"},
-    {"path":"public_rail/paths.py","sha256":"88679e23e6c3c9624555cdb50dc980ac6adfc327902521940510008275f415f6"},
-    {"path":"public_rail/qualification.py","sha256":"146f98b9d6daa54d525cdd64ef896762135247f4027ca4b31499dbe499b948f0"},
-    {"path":"public_rail/requests.py","sha256":"d95d1cde715f779ad1fc3007cd458eae784f83062ef39a3be32ecd692cc98cb9"},
-    {"path":"public_rail/results.py","sha256":"bd865cd4d6a23fe36f1ad478b4bad017ee8bdd3b6c2c06d4526f376776239d26"},
-    {"path":"public_rail/schema.py","sha256":"89bf9c9faff989b7322ad576208cd7c3fa642556be9bf82a8e2db8d63f0d52ce"},
-    {"path":"schemas/authorization.schema.json","sha256":"f2efa95a467b268b8f3904381f85bfe698a452dcf9d1e8a180446a5c9c06a3aa"},
-    {"path":"schemas/bootstrap-manifest.schema.json","sha256":"8f61fb30e9908a08753c707845ac601be159da7c9ae858234090877feccf43f7"},
-    {"path":"schemas/bootstrap-review.schema.json","sha256":"dea7009e56a1db4e8c2e2dd169ae900c784576c4608407f56f83f1e2a5e4640e"},
-    {"path":"schemas/closure.schema.json","sha256":"4c2eedfe876ad905a9a0c4dd6e800884448d2505cf4750ed2457520a234e4da9"},
-    {"path":"schemas/evidence.schema.json","sha256":"61634e2c7e42ab86528811d485b62d863b3b12109923b25599d873e12286b0e8"},
-    {"path":"schemas/intent.schema.json","sha256":"d8b257e22fc10604f42cee2e32718af654a9a1708ed63054301a80166aaa128c"},
-    {"path":"schemas/model-evaluation.schema.json","sha256":"3049290dadc68ecd456dd226f459cb292ec9cc57e772b957fb5d3364b8c50cab"},
-    {"path":"schemas/model-registry.schema.json","sha256":"17470191e45c744ccbe6b55864a5dcfd510f49a0dd4d71b88c0c891389d7b6e3"},
-    {"path":"schemas/output.schema.json","sha256":"7a009fb4af199c9ecf81cee486c5cf40890085c75eb00fc60bf4de68a5b71284"},
-    {"path":"schemas/request.schema.json","sha256":"ffe3055e813bc75e70a474e8afebbb6fd71a35634656ba166845011024b87ecd"},
-    {"path":"schemas/review-result.schema.json","sha256":"d992b144047c38ce9c509217ba0d800f2ad8ce3596156189d444a23050450404"},
-    {"path":"schemas/workspace-binding.schema.json","sha256":"bc177da9ae9e186fcf1118b9daba40721c7cf3cb2d791b38173a5ccef2482c02"},
-    {"path":"templates/ARCHITECTURE-CANON.md","sha256":"2ca1e1e22a2d51fa40d8ad4237b6f7d22b2d4882e853153534af21c4c8d87e63"},
-    {"path":"templates/BOOTSTRAP-REVIEW.md","sha256":"9e72569532abf43487dd2cae195b3c8ed7d854213b6f0581ff607bb36253d713"},
-    {"path":"templates/CODEBASE-VOICE.md","sha256":"d1fab58bea716ad1e6078fd3cab9bc86b4f71dad30f48e0b39aea63e129527ff"},
-    {"path":"templates/INTEGRATION-POINTS.md","sha256":"2fd640d3fd876e9a23f61d9d3a18fa8122d6d495fe3961dc6f16985e8ff2ac2f"},
-    {"path":"templates/PROJECT-CONTEXT.md","sha256":"06a4caf30f10f91b47cb360e37065149b7bc6c9b111da170e1814a9c26524ec3"},
-    {"path":"templates/PROJECT.md","sha256":"257efcb51f4b664aac18f075bfb3243155167709b9a144f64a1b60caaefbfc84"},
-    {"path":"templates/base/README.md","sha256":"5fc770773388fc8b25d97dfefcd729474d48470f6ef710a2bc3c8aeef4c579fd"},
-    {"path":"templates/operational/ARCHITECTURE-CANON.md","sha256":"2e811067e3654a0ee2526eb27959cf0083ef802362e5d84d9b0ac9328c730af1"},
-    {"path":"templates/operational/BOOTSTRAP-REVIEW.md","sha256":"18679bf43c6a0aea0ba2e0d33f0303a8aa8b63e013350936598c41243b952379"},
-    {"path":"templates/operational/CODEBASE-VOICE.md","sha256":"8ea0f29fed988fb31c884b7a37470e52dc465b94da55bbb3c232068da525e799"},
-    {"path":"templates/operational/INTEGRATION-POINTS.md","sha256":"42934824a2b5a00b81af55c8d0793cbff9c909292710969a39d048536faaab55"},
-    {"path":"templates/operational/PROJECT-CONTEXT.md","sha256":"1de8299494b8be9fd749adc8f1b130eb15aff466339dd1c29e8247baa6d1e202"},
-    {"path":"templates/operational/PROJECT.md","sha256":"b560cc4407364913cea736b4264cb53e8e2ef9bd082d96bdce2287dcc92e65a0"},
-    {"path":"tests/test_public_rail.py","sha256":"23f733670fabab9ca3e188b16a277d17365d4244fac8396b834147d4ab755f1a"},
-    {"path":"tests/verify_public_package.py","sha256":"b8bf933ed6269c657365be2a714db0f1f596b4c9b93981a2bfff964e7b23a1b5"}
+  "distribution_version": "0.3.0rc1",
+  "export_configuration_sha256": "4909f90236c0b3ba15a884a49978c3e3571165e97315de32deaf2b8d5fd7aa19",
+  "files": [
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": ".github/workflows/verify-public-package.yml",
+      "sha256": "f6d905c345b0ad530dddf24954db1cd2b982ba441f15ce1b535321c57c91f32e",
+      "source_path": "public-export/v0.5.0/public-ci/verify-public-package.yml"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "CHANGELOG.md",
+      "sha256": "a184ee5915263d36a8307032fef69a55009cd99f3ceba15e1c3ca424c4a9f30e",
+      "source_path": "public-export/v0.5.0/docs/CHANGELOG.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "DOCS/ADOPTION.md",
+      "sha256": "b642ac284d6f47e622ec39ece55e06b87a049c7e640cd3a6358430926b73bd05",
+      "source_path": "public-export/v0.5.0/docs/ADOPTION.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "DOCS/INDEX.md",
+      "sha256": "f884777dbb8b4cdedabdb7357096d5c21fbb01e7dea48a78077cbc0a2ce7a7df",
+      "source_path": "public-export/v0.5.0/docs/INDEX.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "DOCS/SECURITY-BOUNDARY.md",
+      "sha256": "b33d5cf1db95e5053678d9191557d1fea10355fb5647b237caed0b9faf020b56",
+      "source_path": "public-export/v0.5.0/docs/SECURITY-BOUNDARY.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "LICENSE",
+      "sha256": "0be0cd1991c7ea89f0c1c7602b7be1a14ef0c889a9e5c91dd4023c80de740785",
+      "source_path": "public-export/v0.5.0/LICENSE-MIT"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "LICENSES/PUBLIC-SUBSET-MIT.md",
+      "sha256": "1b8956319f3923ab001a7e0ab4360cf355f63d1f964884b0ebbc667c56d93334",
+      "source_path": "public-export/v0.5.0/PUBLIC-SUBSET-MIT-EXCEPTION.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "MAINTENANCE.md",
+      "sha256": "c3da88508dadd49505e9ad428378327178d79fd1d6e506340f11986554840fd1",
+      "source_path": "public-export/v0.5.0/docs/MAINTENANCE.md"
+    },
+    {
+      "classification": "PUBLIC_DOCUMENTATION",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "QUICKSTART-CS.md",
+      "sha256": "7cda324efcfa7b94259d1ae38423ca4d629731e2ea6b81a9227f3fdbd1a6bfc4",
+      "source_path": "public-export/v0.5.0/docs/QUICKSTART-CS.md"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "generated_by": "readme",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "README.md",
+      "sha256": "e0168edcb9d99c1a58f575f83d7be61931e0bfad6e5162c5fd4c8dba9cfcff24"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/__init__.py",
+      "sha256": "ad5d1e277642ee8d18f5bdd6da3be9721cc8079beddeb0900b3bc66f3329a68d",
+      "source_path": "public_rail/__init__.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "source_path": "public_rail/__main__.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/authorization.py",
+      "sha256": "73f1ec01ab59ea7bb6386cedeab09ee810b5fa0cdf605b3fb42985ad4e6ffa1c",
+      "source_path": "public_rail/authorization.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/bootstrap.py",
+      "sha256": "27057354653aa3c22dec1af83419c514d849641946051ba77ede2d71cf0036c6",
+      "source_path": "public_rail/bootstrap.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/cli.py",
+      "sha256": "6f0db0772b5bb11958d54254ca42b5b9f445c4192f81caee456e2936f1fb24ff",
+      "source_path": "public_rail/cli.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/documents.py",
+      "sha256": "0afaa7d85313fa008ff599c6d43a25c46d55fe80441ea0326aabf6e65bf6b098",
+      "source_path": "public_rail/documents.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/evidence.py",
+      "sha256": "f5321487bc970961ea1c313dcd4bb6b54e9054354225fec3b7297fe820e79b19",
+      "source_path": "public_rail/evidence.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/frontmatter.py",
+      "sha256": "35deb03ed92ec15cbcb47911575f7ab599ccab0c066e47678e3d511244225981",
+      "source_path": "public_rail/frontmatter.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/paths.py",
+      "sha256": "88679e23e6c3c9624555cdb50dc980ac6adfc327902521940510008275f415f6",
+      "source_path": "public_rail/paths.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/qualification.py",
+      "sha256": "146f98b9d6daa54d525cdd64ef896762135247f4027ca4b31499dbe499b948f0",
+      "source_path": "public_rail/qualification.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/requests.py",
+      "sha256": "d95d1cde715f779ad1fc3007cd458eae784f83062ef39a3be32ecd692cc98cb9",
+      "source_path": "public_rail/requests.py"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/authorization.schema.json",
+      "sha256": "f2efa95a467b268b8f3904381f85bfe698a452dcf9d1e8a180446a5c9c06a3aa",
+      "source_path": "public_rail/resources/schemas/authorization.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/bootstrap-manifest.schema.json",
+      "sha256": "8f61fb30e9908a08753c707845ac601be159da7c9ae858234090877feccf43f7",
+      "source_path": "public_rail/resources/schemas/bootstrap-manifest.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/bootstrap-review.schema.json",
+      "sha256": "dea7009e56a1db4e8c2e2dd169ae900c784576c4608407f56f83f1e2a5e4640e",
+      "source_path": "public_rail/resources/schemas/bootstrap-review.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/closure.schema.json",
+      "sha256": "4c2eedfe876ad905a9a0c4dd6e800884448d2505cf4750ed2457520a234e4da9",
+      "source_path": "public_rail/resources/schemas/closure.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/evidence.schema.json",
+      "sha256": "61634e2c7e42ab86528811d485b62d863b3b12109923b25599d873e12286b0e8",
+      "source_path": "public_rail/resources/schemas/evidence.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/intent.schema.json",
+      "sha256": "d8b257e22fc10604f42cee2e32718af654a9a1708ed63054301a80166aaa128c",
+      "source_path": "public_rail/resources/schemas/intent.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/model-evaluation.schema.json",
+      "sha256": "3049290dadc68ecd456dd226f459cb292ec9cc57e772b957fb5d3364b8c50cab",
+      "source_path": "public_rail/resources/schemas/model-evaluation.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/model-registry.schema.json",
+      "sha256": "17470191e45c744ccbe6b55864a5dcfd510f49a0dd4d71b88c0c891389d7b6e3",
+      "source_path": "public_rail/resources/schemas/model-registry.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/output.schema.json",
+      "sha256": "7a009fb4af199c9ecf81cee486c5cf40890085c75eb00fc60bf4de68a5b71284",
+      "source_path": "public_rail/resources/schemas/output.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/request.schema.json",
+      "sha256": "ffe3055e813bc75e70a474e8afebbb6fd71a35634656ba166845011024b87ecd",
+      "source_path": "public_rail/resources/schemas/request.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/review-result.schema.json",
+      "sha256": "d992b144047c38ce9c509217ba0d800f2ad8ce3596156189d444a23050450404",
+      "source_path": "public_rail/resources/schemas/review-result.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "public_rail/resources/schemas/workspace-binding.schema.json",
+      "sha256": "bc177da9ae9e186fcf1118b9daba40721c7cf3cb2d791b38173a5ccef2482c02",
+      "source_path": "public_rail/resources/schemas/workspace-binding.schema.json"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/resources/templates/operational/ARCHITECTURE-CANON.md",
+      "sha256": "2e811067e3654a0ee2526eb27959cf0083ef802362e5d84d9b0ac9328c730af1",
+      "source_path": "public_rail/resources/templates/operational/ARCHITECTURE-CANON.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/resources/templates/operational/BOOTSTRAP-REVIEW.md",
+      "sha256": "18679bf43c6a0aea0ba2e0d33f0303a8aa8b63e013350936598c41243b952379",
+      "source_path": "public_rail/resources/templates/operational/BOOTSTRAP-REVIEW.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/resources/templates/operational/CODEBASE-VOICE.md",
+      "sha256": "8ea0f29fed988fb31c884b7a37470e52dc465b94da55bbb3c232068da525e799",
+      "source_path": "public_rail/resources/templates/operational/CODEBASE-VOICE.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/resources/templates/operational/INTEGRATION-POINTS.md",
+      "sha256": "42934824a2b5a00b81af55c8d0793cbff9c909292710969a39d048536faaab55",
+      "source_path": "public_rail/resources/templates/operational/INTEGRATION-POINTS.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/resources/templates/operational/PROJECT-CONTEXT.md",
+      "sha256": "1de8299494b8be9fd749adc8f1b130eb15aff466339dd1c29e8247baa6d1e202",
+      "source_path": "public_rail/resources/templates/operational/PROJECT-CONTEXT.md"
+    },
+    {
+      "classification": "PUBLIC_RESOURCE",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/resources/templates/operational/PROJECT.md",
+      "sha256": "b560cc4407364913cea736b4264cb53e8e2ef9bd082d96bdce2287dcc92e65a0",
+      "source_path": "public_rail/resources/templates/operational/PROJECT.md"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/results.py",
+      "sha256": "bd865cd4d6a23fe36f1ad478b4bad017ee8bdd3b6c2c06d4526f376776239d26",
+      "source_path": "public_rail/results.py"
+    },
+    {
+      "classification": "PUBLIC_RUNTIME",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "public_rail/schema.py",
+      "sha256": "93033f9b89f43aa270a408f6981279fe82502413554f503f2c1d9660090df175",
+      "source_path": "public_rail/schema.py"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "generated_by": "pyproject",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "pyproject.toml",
+      "sha256": "9eabf005ff99d708f41562074c6356cd59b13bf7943d5fbed7b6faccc73428e8"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "ip_classification": "PUBLIC_REFERENCE",
+      "license": "MIT",
+      "path": "tests/test_public_rail.py",
+      "sha256": "21b430ce244f600bd3802f25415080794a580b42f8cb19377da547800819428f",
+      "source_path": "tests/python/test_public_rail.py"
+    },
+    {
+      "classification": "PUBLIC_TEST",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "tests/verify_public_package.py",
+      "sha256": "16bf0ecac91e9717d0d3c7fa27fbbe978146886e21f66757af7a2a916222dc1c",
+      "source_path": "public-export/v0.5.0/public-ci/verify_public_package.py"
+    },
+    {
+      "classification": "PUBLIC_REPOSITORY_METADATA",
+      "generated_by": "export_report",
+      "ip_classification": "PUBLIC_CONTRACT",
+      "license": "MIT",
+      "path": "PUBLIC-EXPORT-REPORT.json",
+      "sha256": "0f5ceabe835458c9073bd79a42d0a921ed5bbc4983e254e39a2282aa369a2767"
+    }
   ],
-  "repository_control_files": [
-    {"path":".github/workflows/verify-public-package.yml","sha256":"92fda0816fed3e85ebc8daeb5d4998dbd68cda41a475f4d7979cfcf93e5aad7b"}
-  ]
+  "license": "MIT",
+  "manifest_id": "boring-admin-ai-rail-public-v0.3.0rc1-from-internal-v0.5.0",
+  "public_api_version": "0.2.2",
+  "public_repository": "gehorak/boring-admin-ai-rail",
+  "schema_version": "public-manifest/v2",
+  "source_baseline_commit": "ae658093cebf9c51f39d170940fdfe07d3c50080",
+  "source_commit": "10d3f2e77dc36049621ddb05b870858818f184cd",
+  "source_identity": {
+    "approved_source_status": "HOLD",
+    "candidate_source_sha": "10d3f2e77dc36049621ddb05b870858818f184cd",
+    "ci_integration_sha": null,
+    "internal_baseline_commit": "ae658093cebf9c51f39d170940fdfe07d3c50080",
+    "internal_baseline_tag": "v0.5.0",
+    "pr_head_sha": null
+  },
+  "source_tag": "v0.5.0"
 }

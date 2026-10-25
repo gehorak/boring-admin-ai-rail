@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import re
 from functools import lru_cache
-from pathlib import Path
+from importlib.resources import files
 from typing import Any
 
 
@@ -55,7 +55,7 @@ def unsupported_keywords(schema: object, location: str = "$schema") -> list[str]
 def load_schema(name: str) -> dict[str, Any]:
     if name not in SCHEMA_NAMES:
         raise ValueError(f"Unknown public schema: {name}.")
-    path = Path(__file__).resolve().parent.parent / "schemas" / f"{name}.schema.json"
+    path = files("public_rail").joinpath("resources", "schemas", f"{name}.schema.json")
     schema = json.loads(path.read_text(encoding="utf-8"))
     findings = unsupported_keywords(schema)
     if findings:
