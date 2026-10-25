@@ -7,8 +7,8 @@ resources, templates, and regression test are not maintained here.
 ## Source identity
 
 - Source baseline identity: `v0.5.0`
-- Recorded export source commit: `10d3f2e77dc36049621ddb05b870858818f184cd`
-- Public distribution version: `0.3.0rc1`
+- Recorded export source commit: `9e9315c8cf3c8f69f939e1c1c60b5e340aa1c6e1`
+- Public distribution version: `0.3.0`
 - Public API compatibility identity: `0.2.2`
 
 `PUBLIC-MANIFEST.json` records every generated or copied path and its
